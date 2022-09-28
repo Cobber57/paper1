@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    
+    
+    
+    <style>
+      html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      #mapid {
+        // configure the size of the map 
+        width: 100%;
+        height: 100%;
+      } 
+
+    </style>
+  </head>
+  <body>
+    <div id="mapid"></div>
+    <script>
+      // initialize Leaflet
+
+      var map = L.map('mapid').setView([52.369, -2.23], 12);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1IjoicGF1bG1hYzU3IiwiYSI6ImNrY3AwMXU3azAxb3Yycm1nOWJjMWwxeW8ifQ.CMYqmZyOXntGEoI1X01_vw'
+      }).addTo(map);
+    
+
+      // show the scale bar on the lower left corner
+      L.control.scale().addTo(map);
+
+      // show Target probe on the map
+// IXP Featuregroup18
+var group18 = L.featureGroup();
+      // IXP 18 Facility 34
+var bounds_34 = [[51.5128813,-0.0020296000000000003],[51.5108813,-2.960000000000007e-05]];
+var rectangle_34 = L.rectangle(bounds_34, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4}).addTo(map);
+rectangle_34.bindPopup("<b>IXP 18<br />LINX LON1<br />195.66.224.0/22<br />2001:7f8:4::/64<br /> Facility 34<br />Telehouse - Global Data Centers<br />3-10-10 Iidabashi<br /> Administration by:- <br />Telehouse - Global Data Centers<br />3-10-10 Iidabashi<br />Chiyoda-ku<br />JP<br />http://www.telehouse.com</b><br /> ");
+rectangle_34.addTo(group18);
+      // Draw Line_34
+var polylinePoints = [[51.5118813, -0.0010296],[51.5118813, -0.0010296]];
+var polyline_34 = L.polyline(polylinePoints, {color: "black", weight: 1}).addTo(map);
+polyline_34.addTo(group18);
+      // IXP 18 Facility 39
+var bounds_39 = [[51.5128813,-0.0020296000000000003],[51.5108813,-2.960000000000007e-05]];
+var rectangle_39 = L.rectangle(bounds_39, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4}).addTo(map);
+rectangle_39.bindPopup("<b>IXP 18<br />LINX LON1<br />195.66.224.0/22<br />2001:7f8:4::/64<br /> Facility 39<br />Telehouse - Global Data Centers<br />3-10-10 Iidabashi<br /> Administration by:- <br />Telehouse - Global Data Centers<br />3-10-10 Iidabashi<br />Chiyoda-ku<br />JP<br />http://www.telehouse.com</b><br /> ");
+rectangle_39.addTo(group18);
+      // Draw Line_39
+var polylinePoints = [[51.5118813, -0.0010296],[51.5118813, -0.0010296]];
+var polyline_39 = L.polyline(polylinePoints, {color: "black", weight: 1}).addTo(map);
+polyline_39.addTo(group18);
+      // IXP 18 Facility 40
+var bounds_40 = [[51.500819,-0.011775],[51.498819000000005,-0.009774999999999999]];
+var rectangle_40 = L.rectangle(bounds_40, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4}).addTo(map);
+rectangle_40.bindPopup("<b>IXP 18<br />LINX LON1<br />195.66.224.0/22<br />2001:7f8:4::/64<br /> Facility 40<br />Interxion - A Digital Realty Company<br />Scorpius 30<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+rectangle_40.addTo(group18);
+      // Draw Line_40
+var polylinePoints = [[51.5118813, -0.0010296],[51.499819, -0.010775]];
+var polyline_40 = L.polyline(polylinePoints, {color: "black", weight: 1}).addTo(map);
+polyline_40.addTo(group18);

@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    
+    
+    
+    <style>
+      html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      
+      #mapid {
+        
+        width: 100%;
+        height: 100%;
+      } 
+
+    </style>
+  </head>
+  <body>
+    <div id="mapid"></div>
+    <script>
+      // initialize Leaflet
+
+      var map = L.map('mapid').setView([51.5205, -0.6185], 12);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1IjoicGF1bG1hYzU3IiwiYSI6ImNrY3AwMXU3azAxb3Yycm1nOWJjMWwxeW8ifQ.CMYqmZyOXntGEoI1X01_vw'
+      }).addTo(map);
+    
+
+      // show the scale bar on the lower left corner
+      L.control.scale().addTo(map);
+
+      // show Target probe on the map
+      // Target 6087
+      var circle6087 = L.circle([51.5205,-0.6185], { color: 'yellow', fillColor: '#8000000', fillOpacity: 0.5, radius: 1000 }).addTo(map);
+      circle6087.bindPopup("<b>Target 6087</b><br />AS 43996<br />5.57.16.65<br /> ");
+
+      var group6087 = L.featureGroup();
+      circle6087.on('click', function(e) {if(map.hasLayer(group6087)){
+        map.removeLayer(group6087);          map.removeLayer(target_6087); }
+      else {
+        map.addLayer(group6087); };} )
+      // Probe 6971
+      var circle6971 = L.circle([51.5175,-0.6295], { color: 'red', fillColor: '#8000000', fillOpacity: 0.5, radius: 500 }).addTo(map);
+      circle6971.bindPopup("<b>Probe 6971</b><br />AS 14061<br />46.101.90.215<br /> ");
+
+      var group6971 = L.featureGroup();
+      // greater Circle 6971
+      var gcircle_6971 = L.circle([51.5175,-0.6295], { color: 'green', fillColor: '#00', interactive: false, fillOpacity: 0, radius: 862191.0});
+
+      gcircle_6971.addTo(group6971);
+      gcircle_6971.addTo(group6087);
+      // Probe 6971 Hop 1
+      var circle_6971_1 = L.circle([51.51750344530226,-0.6294873702190295], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_1.bindPopup("<b>Hop 6971_1</b><br />AS [43996]<br />5.57.16.65<br />Address: no address<br />stt : 0.005 ");
+
+
+      circle_6971_1.addTo(group6971);
+      // Probe 6971 Line 1
+      var latlng_6971_1 = [ [51.5175, -0.6295],[51.51750344530226, -0.6294873702190295] ] ;
+      var pline_6971_1 = L.polyline(latlng_6971_1, {color: 'red'});
+
+      pline_6971_1.bindPopup("<b>Hop 6971_1</b><br />From: 5.57.16.65 To: 5.57.16.65<br />Distance: 0.0009541872016210677 Km<br />Stt: 0.005<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.0006361248010807118 ");
+
+
+      pline_6971_1.addTo(group6971);
+      // Probe 6971 Hop 2
+      var circle_6971_2 = L.circle([51.51762251504875,-0.6290508803921102], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_2.bindPopup("<b>Hop 6971_2</b><br />AS [43996]<br />10.80.71.15<br />Address: no address<br />stt : 0.173 ");
+
+
+      circle_6971_2.addTo(group6971);
+      // Probe 6971 Line 2
+      var latlng_6971_2 = [ [51.51750344530226, -0.6294873702190295],[51.51762251504875, -0.6290508803921102] ] ;
+      var pline_6971_2 = L.polyline(latlng_6971_2, {color: 'red'});
+
+      pline_6971_2.bindPopup("<b>Hop 6971_2</b><br />From: 5.57.16.65 To: 10.80.71.15<br />Distance: 0.03297696825301774 Km<br />Stt: 0.173<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.0006353943786708621 ");
+
+
+      pline_6971_2.addTo(group6971);
+      // Probe 6971 Hop 3
+      var circle_6971_3 = L.circle([51.517908356493365,-0.6280029997872969], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_3.bindPopup("<b>Hop 6971_3</b><br />AS ['14061']<br />138.197.249.118<br />Address: no address<br />stt : 0.4325 ");
+
+
+      circle_6971_3.addTo(group6971);
+      // Probe 6971 Line 3
+      var latlng_6971_3 = [ [51.51762251504875, -0.6290508803921102],[51.517908356493365, -0.6280029997872969] ] ;
+      var pline_6971_3 = L.polyline(latlng_6971_3, {color: 'red'});
+
+      pline_6971_3.bindPopup("<b>Hop 6971_3</b><br />From: 5.57.16.65 To: 138.197.249.118<br />Distance: 0.0791670643875634 Km<br />Stt: 0.4325<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.0006101507852606042 ");
+
+
+      pline_6971_3.addTo(group6971);
+      // Probe 6971 Hop 4
+      var circle_6971_4 = L.circle([51.518044370651666,-0.6275043619713685], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_4.bindPopup("<b>Hop 6971_4</b><br />AS ['14061']<br />138.197.251.132<br />Address: no address<br />stt : 0.2285 ");
+
+
+      circle_6971_4.addTo(group6971);
+      // Probe 6971 Line 4
+      var latlng_6971_4 = [ [51.517908356493365, -0.6280029997872969],[51.518044370651666, -0.6275043619713685] ] ;
+      var pline_6971_4 = L.polyline(latlng_6971_4, {color: 'red'});
+
+      pline_6971_4.bindPopup("<b>Hop 6971_4</b><br />From: 5.57.16.65 To: 138.197.251.132<br />Distance: 0.03767158803135685 Km<br />Stt: 0.2285<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.0005495490595383931 ");
+
+
+      pline_6971_4.addTo(group6971);
+      // Probe 6971 Hop 5
+      var circle_6971_5 = L.circle([51.5181873455788,-0.6269801939040195], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_5.bindPopup("<b>Hop 6971_5</b><br />AS ['14061']<br />138.197.249.217<br />Address: no address<br />stt : 0.2535 ");
+
+
+      circle_6971_5.addTo(group6971);
+      // Probe 6971 Line 5
+      var latlng_6971_5 = [ [51.518044370651666, -0.6275043619713685],[51.5181873455788, -0.6269801939040195] ] ;
+      var pline_6971_5 = L.polyline(latlng_6971_5, {color: 'red'});
+
+      pline_6971_5.bindPopup("<b>Hop 6971_5</b><br />From: 5.57.16.65 To: 138.197.249.217<br />Distance: 0.039600130409256445 Km<br />Stt: 0.2535<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.0005207117739547198 ");
+
+
+      pline_6971_5.addTo(group6971);
+      // Probe 6971 Hop 6
+      var circle_6971_6 = L.circle([51.522463,-0.62905], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_6.bindPopup("<b>Hop 6971_6</b><br />AS [8553]<br />195.66.224.76<br />Address: no address<br />stt : 0.7165 ");
+
+
+      circle_6971_6.addTo(group6971);
+      // Probe 6971 Line 6
+      var latlng_6971_6 = [ [51.5181873455788, -0.6269801939040195],[51.51856791737311, -0.6255849014109268] ] ;
+      var pline_6971_6 = L.polyline(latlng_6971_6, {color: 'red'});
+
+      pline_6971_6.bindPopup("<b>Hop 6971_6</b><br />From: 5.57.16.65 To: 195.66.224.76<br />Distance: 0.10541109422972345 Km<br />Stt: 0.7165<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.0004903982053022723 ");
+
+
+      pline_6971_6.addTo(group6971);
+// IXP Featuregroup18
+var group18 = L.featureGroup();
+      // IXP 18 Facility 832
+var bounds_832 = [[51.523463,-0.63005],[51.521463000000004,-0.62805]];
+var rectangle_832 = L.rectangle(bounds_832, {color: "black", fillColor: 0, fillOpacity: 0, weight: 1 });
+rectangle_832.bindPopup("<b>IXP 18<br />LINX LON1<br />195.66.224.0/22<br />2001:7f8:4::/64<br /> Facility 832<br />Equinix LD5 - London, Slough<br />8 Buckingham Avenue<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+rectangle_832.addTo(group18);
+      // Draw Line_832
+var polylinePoints = [[51.522463, -0.62905],[51.522463, -0.62905]];
+var polyline_832 = L.polyline(polylinePoints, {color: "black", weight: 1});
+polyline_832.addTo(group18);
+      // Probe 6971 Hop 7
+      var circle_6971_7 = L.circle([51.522463,-0.62905], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_7.bindPopup("<b>Hop 6971_7</b><br />AS [6461]<br />64.125.28.150<br />Address: no address<br />stt : 3.331 ");
+
+
+      circle_6971_7.addTo(group6971);
+      // Probe 6971 Line 7
+      var latlng_6971_7 = [ [51.51856791737311, -0.6255849014109268],[51.520045913535576, -0.6201653190752598] ] ;
+      var pline_6971_7 = L.polyline(latlng_6971_7, {color: 'red'});
+
+      pline_6971_7.bindPopup("<b>Hop 6971_7</b><br />From: 5.57.16.65 To: 64.125.28.150<br />Distance: 0.40942009939661234 Km<br />Stt: 3.331<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.0004097068942225681 ");
+
+
+      pline_6971_7.addTo(group6971);
+      // Probe 6971 Hop 8
+      var circle_6971_8 = L.circle([51.52039379311849,-0.6188895143952643], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_8.bindPopup("<b>Hop 6971_8</b><br />AS [6461]<br />64.125.28.150<br />Address: no address<br />stt : 3.336 ");
+
+
+      circle_6971_8.addTo(group6971);
+      // Probe 6971 Line 8
+      var latlng_6971_8 = [ [51.520045913535576, -0.6201653190752598],[51.52039379311849, -0.6188895143952643] ] ;
+      var pline_6971_8 = L.polyline(latlng_6971_8, {color: 'red'});
+
+      pline_6971_8.bindPopup("<b>Hop 6971_8</b><br />From: 5.57.16.65 To: 64.125.28.150<br />Distance: 0.09637627149862779 Km<br />Stt: 3.336<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 9.629923211293744e-05 ");
+
+
+      pline_6971_8.addTo(group6971);
+      // Probe 6971 Hop 9
+      var circle_6971_9 = L.circle([51.520476427037316,-0.6185864545518672], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_9.bindPopup("<b>Hop 6971_9</b><br />AS [6461]<br />64.125.28.185<br />Address: no address<br />stt : 3.388 ");
+
+
+      circle_6971_9.addTo(group6971);
+      // Probe 6971 Line 9
+      var latlng_6971_9 = [ [51.52039379311849, -0.6188895143952643],[51.520476427037316, -0.6185864545518672] ] ;
+      var pline_6971_9 = L.polyline(latlng_6971_9, {color: 'red'});
+
+      pline_6971_9.bindPopup("<b>Hop 6971_9</b><br />From: 5.57.16.65 To: 64.125.28.185<br />Distance: 0.022893395912872264 Km<br />Stt: 3.388<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 2.2524002275553193e-05 ");
+
+
+      pline_6971_9.addTo(group6971);
+      // Probe 6971 Hop 10
+      var circle_6971_10 = L.circle([51.5204987224223,-0.6185046855630335], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_10.bindPopup("<b>Hop 6971_10</b><br />AS [6461]<br />94.31.33.62<br />Address: no address<br />stt : 4.1185 ");
+
+
+      circle_6971_10.addTo(group6971);
+      // Probe 6971 Line 10
+      var latlng_6971_10 = [ [51.520476427037316, -0.6185864545518672],[51.5204987224223, -0.6185046855630335] ] ;
+      var pline_6971_10 = L.polyline(latlng_6971_10, {color: 'red'});
+
+      pline_6971_10.bindPopup("<b>Hop 6971_10</b><br />From: 5.57.16.65 To: 94.31.33.62<br />Distance: 0.006176884079028803 Km<br />Stt: 4.1185<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 4.999299161530334e-06 ");
+
+
+      pline_6971_10.addTo(group6971);
+      // Probe 6971 Hop 11
+      var circle_6971_11 = L.circle([51.520499932226336,-0.6185002485624271], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_11.bindPopup("<b>Hop 6971_11</b><br />AS [6461]<br />94.31.33.62<br />Address: no address<br />stt : 4.1235 ");
+
+
+      circle_6971_11.addTo(group6971);
+      // Probe 6971 Line 11
+      var latlng_6971_11 = [ [51.5204987224223, -0.6185046855630335],[51.520499932226336, -0.6185002485624271] ] ;
+      var pline_6971_11 = L.polyline(latlng_6971_11, {color: 'red'});
+
+      pline_6971_11.bindPopup("<b>Hop 6971_11</b><br />From: 5.57.16.65 To: 94.31.33.62<br />Distance: 0.0003351738185927429 Km<br />Stt: 4.1235<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 2.7094605601450455e-07 ");
+
+
+      pline_6971_11.addTo(group6971);
+      // Probe 6971 Hop 12
+      var circle_6971_12 = L.circle([51.52049999648253,-0.6185000129004729], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_12.bindPopup("<b>Hop 6971_12</b><br />AS [6461]<br />94.31.33.62<br />Address: no address<br />stt : 4.1285 ");
+
+
+      circle_6971_12.addTo(group6971);
+      // Probe 6971 Line 12
+      var latlng_6971_12 = [ [51.520499932226336, -0.6185002485624271],[51.52049999648253, -0.6185000129004729] ] ;
+      var pline_6971_12 = L.polyline(latlng_6971_12, {color: 'red'});
+
+      pline_6971_12.bindPopup("<b>Hop 6971_12</b><br />From: 5.57.16.65 To: 94.31.33.62<br />Distance: 1.7802052003234225e-05 Km<br />Stt: 4.1285<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 1.4373301040114831e-08 ");
+
+
+      pline_6971_12.addTo(group6971);
+      // Probe 6971 Hop 13
+      var circle_6971_13 = L.circle([51.5205,-0.6185], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6971_13.bindPopup("<b>Hop 6971_13</b><br />AS [43996]<br />5.57.16.65<br />Address: no address<br />stt : 4.3545 ");
+
+
+      circle_6971_13.addTo(group6971);
+      // Probe 6971 Line 13
+      var latlng_6971_13 = [ [51.52049999648253, -0.6185000129004729],[51.5205, -0.6185] ] ;
+      var pline_6971_13 = L.polyline(latlng_6971_13, {color: 'red'});
+
+      pline_6971_13.bindPopup("<b>Hop 6971_13</b><br />From: 5.57.16.65 To: 5.57.16.65<br />Distance: 9.74509869529465e-07 Km<br />Stt: 4.3545<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 7.459791553025337e-10 ");
+
+
+      pline_6971_13.addTo(group6971);
+      circle6971.on('click', function(e) {if(map.hasLayer(group6971)){
+        map.removeLayer(group6971);  map.removeLayer(group18); }
+      else {
+        map.addLayer(group6971);  map.addLayer(group18);};} )
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+"31906476":{
+"target_probe": "6087",
+"target_address": "5.57.16.65",
+"target_coordinates": [-0.6185, 51.5205],
+"results": {
+            "6879": {
+                    "source_address": "90.223.193.1",
+                    "source_coordinates": [0.0005, 51.5115],
+                    "hops": 
+                    {
+                    "1": { "rtt": 0.518, "ip_from": "90.223.193.0" },
+                    "2": { "rtt": 1.171, "ip_from": "195.66.224.253" },
+                    "3": { "rtt": 1.331, "ip_from": "5.57.16.65" }
+                    },
+                    "final_rtt": 1.331,
+                    "max_hops": 3,
+                    "fibre_length": 119.78999999999999,
+                    "geodistance_to_target": 68.45283524045193
+                    }
+        
+            }
+            }
+}

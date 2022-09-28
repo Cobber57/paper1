@@ -1,0 +1,765 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    
+    
+    
+    <style>
+      html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      #mapid {
+        // configure the size of the map 
+        width: 100%;
+        height: 100%;
+      } 
+
+    </style>
+  </head>
+  <body>
+    <div id="mapid"></div>
+    <script>
+      // initialize Leaflet
+
+      var map = L.map('mapid').setView([52.369, -2.23], 12);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1IjoicGF1bG1hYzU3IiwiYSI6ImNrY3AwMXU3azAxb3Yycm1nOWJjMWwxeW8ifQ.CMYqmZyOXntGEoI1X01_vw'
+      }).addTo(map);
+    
+
+      // show the scale bar on the lower left corner
+      L.control.scale().addTo(map);
+
+      // show Target probe on the map
+      //  Facility 34
+var bounds_34 = [[51.5128813,-0.0020296000000000003],[51.5108813,-2.960000000000007e-05]];
+var rectangle_34 = L.rectangle(bounds_34, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_34.bindPopup("<b>IXP  Facility 34<br />Telehouse - London (Docklands North)<br />14 Coriander Avenue<br /> Administration by:- <br />Telehouse - Global Data Centers<br />3-10-10 Iidabashi<br />Chiyoda-ku<br />JP<br />http://www.telehouse.com</b><br /> ");
+      //  Facility 35
+var bounds_35 = [[51.483247999999996,-0.461224],[51.481248,-0.459224]];
+var rectangle_35 = L.rectangle(bounds_35, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_35.bindPopup("<b>IXP  Facility 35<br />Interxion London (West Drayton)<br />Unit 1<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 39
+var bounds_39 = [[51.5128813,-0.0020296000000000003],[51.5108813,-2.960000000000007e-05]];
+var rectangle_39 = L.rectangle(bounds_39, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_39.bindPopup("<b>IXP  Facility 39<br />Telehouse - London (Docklands East)<br />14 Coriander Avenue<br /> Administration by:- <br />Telehouse - Global Data Centers<br />3-10-10 Iidabashi<br />Chiyoda-ku<br />JP<br />http://www.telehouse.com</b><br /> ");
+      //  Facility 40
+var bounds_40 = [[51.500819,-0.011775],[51.498819000000005,-0.009774999999999999]];
+var rectangle_40 = L.rectangle(bounds_40, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_40.bindPopup("<b>IXP  Facility 40<br />Interxion London (Sovereign House)<br />Sovereign House<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 43
+var bounds_43 = [[51.497901999999996,-0.019933],[51.495902,-0.017932999999999998]];
+var rectangle_43 = L.rectangle(bounds_43, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_43.bindPopup("<b>IXP  Facility 43<br />Interxion London (Cloud House)<br />Cloud House<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 45
+var bounds_45 = [[51.499842,-0.015327],[51.497842000000006,-0.013326999999999999]];
+var rectangle_45 = L.rectangle(bounds_45, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_45.bindPopup("<b>IXP  Facility 45<br />Equinix LD8 - London, Docklands<br />6-9 Harbour Exchange Square<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 46
+var bounds_46 = [[51.521397,-0.074777],[51.519397000000005,-0.072777]];
+var rectangle_46 = L.rectangle(bounds_46, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_46.bindPopup("<b>IXP  Facility 46<br />Interxion London (LON1, LON2 & LON3)<br />11 Hanbury Street<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 47
+var bounds_47 = [[51.511984999999996,-0.004494],[51.509985,-0.002494]];
+var rectangle_47 = L.rectangle(bounds_47, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_47.bindPopup("<b>IXP  Facility 47<br />Global Switch London East<br />3 Nutmeg Lane<br /> Administration by:- <br />Global Switch<br />2nd Floor, Nova North<br />London<br />GB<br />http://www.globalswitch.com</b><br /> ");
+      //  Facility 48
+var bounds_48 = [[51.512364,-0.011633999999999999],[51.510364,-0.009634]];
+var rectangle_48 = L.rectangle(bounds_48, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_48.bindPopup("<b>IXP  Facility 48<br />Global Switch London North<br />240 East India Dock Road<br /> Administration by:- <br />Global Switch<br />2nd Floor, Nova North<br />London<br />GB<br />http://www.globalswitch.com</b><br /> ");
+      //  Facility 50
+var bounds_50 = [[51.520452999999996,-0.088837],[51.518453,-0.086837]];
+var rectangle_50 = L.rectangle(bounds_50, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_50.bindPopup("<b>IXP  Facility 50<br />Equinix LD1 - No longer operational<br />101 Finsbury Pavement<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 51
+var bounds_51 = [[51.499853449999996,-0.0153224958580979],[51.49785345,-0.013322495858097902]];
+var rectangle_51 = L.rectangle(bounds_51, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_51.bindPopup("<b>IXP  Facility 51<br />Exchange Tower London<br />1&2 Harbour Exchange Square<br /> Administration by:- <br />Cushman &  Wakefield<br /><br /><br /><br /></b><br /> ");
+      //  Facility 76
+var bounds_76 = [[53.464112,-2.237869],[53.462112000000005,-2.235869]];
+var rectangle_76 = L.rectangle(bounds_76, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_76.bindPopup("<b>IXP  Facility 76<br />Equinix MA1 - Manchester, Williams/Kilburn<br />Manchester Science Park<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 78
+var bounds_78 = [[53.465348999999996,-2.248614],[53.463349,-2.246614]];
+var rectangle_78 = L.rectangle(bounds_78, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_78.bindPopup("<b>IXP  Facility 78<br />Equinix MA2 - Manchester, Reynolds House<br />Reynolds House<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 79
+var bounds_79 = [[51.501621,-0.012757999999999999],[51.499621000000005,-0.010758]];
+var rectangle_79 = L.rectangle(bounds_79, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_79.bindPopup("<b>IXP  Facility 79<br />Interxion London (Sovereign House North)<br />Memaco House, Meridian Gate<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 91
+var bounds_91 = [[51.800899,-0.184762],[51.798899000000006,-0.182762]];
+var rectangle_91 = L.rectangle(bounds_91, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_91.bindPopup("<b>IXP  Facility 91<br />COLT DC London<br />Welwyn Garden City, 20 Black Fan Road<br /> Administration by:- <br />Colt Technology Services Group<br />Colt House<br />London<br />GB<br />https://www.colt.net</b><br /> ");
+      //  Facility 243
+var bounds_243 = [[54.973886,-1.604213],[54.971886000000005,-1.602213]];
+var rectangle_243 = L.rectangle(bounds_243, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_243.bindPopup("<b>IXP  Facility 243<br />Pulsant Newcastle Central<br />5 Bridge View<br /> Administration by:- <br />Pulsant (Scotland) Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 244
+var bounds_244 = [[53.4790095,-2.2413426],[53.4770095,-2.2393426]];
+var rectangle_244 = L.rectangle(bounds_244, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_244.bindPopup("<b>IXP  Facility 244<br />ServerBank Manchester<br />Faulkner Street<br /> Administration by:- <br />Daisy Communications<br /><br /><br /><br /></b><br /> ");
+      //  Facility 248
+var bounds_248 = [[51.514914999999995,-0.0735],[51.512915,-0.0715]];
+var rectangle_248 = L.rectangle(bounds_248, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_248.bindPopup("<b>IXP  Facility 248<br />Level(3) London Braham Street<br />6 Braham St<br /> Administration by:- <br />Lumen Technologies Inc<br />1025 Eldorado Blvd<br />Broomfield<br />US<br />http://www.lumen.com/</b><br /> ");
+      //  Facility 254
+var bounds_254 = [[51.523955,-0.083993],[51.521955000000005,-0.081993]];
+var rectangle_254 = L.rectangle(bounds_254, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_254.bindPopup("<b>IXP  Facility 254<br />City Lifeline London<br />80 Clifton Street<br /> Administration by:- <br />Redcentric PLC<br />Central House<br />Harrogate<br />GB<br />http://www.redcentricplc.com</b><br /> ");
+      //  Facility 271
+var bounds_271 = [[55.931562,-3.296901],[55.929562000000004,-3.2949010000000003]];
+var rectangle_271 = L.rectangle(bounds_271, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_271.bindPopup("<b>IXP  Facility 271<br />Pulsant Edinburgh South Gyle<br />The Clocktower Estate, Flassches Yard<br /> Administration by:- <br />Pulsant (Scotland) Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 305
+var bounds_305 = [[55.852165,-4.284217],[55.850165000000004,-4.282216999999999]];
+var rectangle_305 = L.rectangle(bounds_305, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_305.bindPopup("<b>IXP  Facility 305<br />iomart DC1 Glasgow<br />88 Middlesex Street<br /> Administration by:- <br />iomart Hosting Limited<br />Lister Pavilion, Kelvin Campus<br />Glasgow<br />GB<br />http://www.iomart.com</b><br /> ");
+      //  Facility 334
+var bounds_334 = [[51.501351,-0.709278],[51.499351000000004,-0.707278]];
+var rectangle_334 = L.rectangle(bounds_334, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_334.bindPopup("<b>IXP  Facility 334<br />Pulsant Maidenhead<br />BlueSquare House<br /> Administration by:- <br />Pulsant (Scotland) Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 335
+var bounds_335 = [[51.272106,1.294809],[51.270106000000006,1.2968089999999999]];
+var rectangle_335 = L.rectangle(bounds_335, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_335.bindPopup("<b>IXP  Facility 335<br />The Bunker (Ash)<br />Ash Radar Station<br /> Administration by:- <br />The Bunker Secure Hosting Ltd<br />Ash Radar Station<br />Sandwich<br />GB<br />https://www.thebunker.net</b><br /> ");
+      //  Facility 352
+var bounds_352 = [[51.495644,-0.019318000000000002],[51.493644,-0.017318]];
+var rectangle_352 = L.rectangle(bounds_352, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_352.bindPopup("<b>IXP  Facility 352<br />London Hosting Centre<br />City Reach, 6 Greenwich View Place<br /> Administration by:- <br />Telstra Europe<br /><br /><br /><br /></b><br /> ");
+      //  Facility 354
+var bounds_354 = [[51.529720999999995,-0.101964],[51.527721,-0.099964]];
+var rectangle_354 = L.rectangle(bounds_354, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_354.bindPopup("<b>IXP  Facility 354<br />Level(3) London Goswell Road<br />260-266 Goswell Road<br /> Administration by:- <br />Lumen Technologies Inc<br />1025 Eldorado Blvd<br />Broomfield<br />US<br />http://www.lumen.com/</b><br /> ");
+      //  Facility 398
+var bounds_398 = [[51.529787999999996,-0.27846],[51.527788,-0.27646]];
+var rectangle_398 = L.rectangle(bounds_398, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_398.bindPopup("<b>IXP  Facility 398<br />Equinix LD3 - London, Park Royal<br />Matrix Unit 11, 900 Coronation Road<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 399
+var bounds_399 = [[51.524805,-0.636545],[51.522805000000005,-0.634545]];
+var rectangle_399 = L.rectangle(bounds_399, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_399.bindPopup("<b>IXP  Facility 399<br />Equinix LD4 - London, Slough<br />2 Buckingham Avenue<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 418
+var bounds_418 = [[51.543392,0.001415],[51.541392,0.003415]];
+var rectangle_418 = L.rectangle(bounds_418, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_418.bindPopup("<b>IXP  Facility 418<br />TATA Communications Stratford<br />78 - 102 The Broadway<br /> Administration by:- <br />TATA Communications Ltd<br />C-21 and C-36, G Block<br />Mumbai<br />IN<br />http://www.tatacommunications.com</b><br /> ");
+      //  Facility 428
+var bounds_428 = [[51.5243167,-0.0869255],[51.522316700000005,-0.0849255]];
+var rectangle_428 = L.rectangle(bounds_428, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_428.bindPopup("<b>IXP  Facility 428<br />iomart DC2 London<br />Epworth Street<br /> Administration by:- <br />iomart Hosting Limited<br />Lister Pavilion, Kelvin Campus<br />Glasgow<br />GB<br />http://www.iomart.com</b><br /> ");
+      //  Facility 438
+var bounds_438 = [[53.462739309008555,-2.239477402437006],[53.46073930900856,-2.237477402437006]];
+var rectangle_438 = L.rectangle(bounds_438, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_438.bindPopup("<b>IXP  Facility 438<br />Synergy House Manchester<br />1 Synergy House, Manchester Science Park<br /> Administration by:- <br />The UK Grid Network LTD<br /><br /><br /><br /></b><br /> ");
+      //  Facility 534
+var bounds_534 = [[51.531546999999996,-0.258425],[51.529547,-0.256425]];
+var rectangle_534 = L.rectangle(bounds_534, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_534.bindPopup("<b>IXP  Facility 534<br />Equinix LD9 - London, Powergate<br />Unit 1, Powergate Business Park<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 565
+var bounds_565 = [[51.313671,0.724281],[51.311671000000004,0.726281]];
+var rectangle_565 = L.rectangle(bounds_565, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_565.bindPopup("<b>IXP  Facility 565<br />Kent Science Park<br />Kent Science Park<br /> Administration by:- <br />Sota Solutions Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 571
+var bounds_571 = [[51.512977,-0.589081],[51.510977000000004,-0.587081]];
+var rectangle_571 = L.rectangle(bounds_571, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_571.bindPopup("<b>IXP  Facility 571<br />SloughIX<br />Slough Interchange<br /> Administration by:- <br />Network-I<br /><br /><br /><br /></b><br /> ");
+      //  Facility 601
+var bounds_601 = [[53.38012,-2.259538],[53.37812,-2.2575380000000003]];
+var rectangle_601 = L.rectangle(bounds_601, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_601.bindPopup("<b>IXP  Facility 601<br />Teledata Manchester - Delta House<br />Delta House<br /> Administration by:- <br />Teledata UK Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 631
+var bounds_631 = [[51.521432,-0.619277],[51.519432,-0.617277]];
+var rectangle_631 = L.rectangle(bounds_631, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_631.bindPopup("<b>IXP  Facility 631<br />Rackspace Slough<br />115 Buckingham Avenue<br /> Administration by:- <br />Rackspace<br /><br /><br /><br /></b><br /> ");
+      //  Facility 632
+var bounds_632 = [[51.4488373,-0.9777723],[51.446837300000006,-0.9757723]];
+var rectangle_632 = L.rectangle(bounds_632, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_632.bindPopup("<b>IXP  Facility 632<br />Pulsant Reading Central<br />Rose Kiln Lane<br /> Administration by:- <br />Pulsant (Scotland) Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 633
+var bounds_633 = [[51.458714,-0.944472],[51.456714000000005,-0.942472]];
+var rectangle_633 = L.rectangle(bounds_633, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_633.bindPopup("<b>IXP  Facility 633<br />Pulsant Reading East<br />Unit 53 Suttons Business Park<br /> Administration by:- <br />Pulsant (Scotland) Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 656
+var bounds_656 = [[51.374297,-1.278122],[51.372297,-1.2761220000000002]];
+var rectangle_656 = L.rectangle(bounds_656, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_656.bindPopup("<b>IXP  Facility 656<br />The Bunker (Newbury)<br />Venture West<br /> Administration by:- <br />The Bunker Secure Hosting Ltd<br />Ash Radar Station<br />Sandwich<br />GB<br />https://www.thebunker.net</b><br /> ");
+      //  Facility 676
+var bounds_676 = [[52.951916,-1.1399819999999998],[52.949916,-1.137982]];
+var rectangle_676 = L.rectangle(bounds_676, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_676.bindPopup("<b>IXP  Facility 676<br />iomart DC3 Nottingham<br />2-6 Fisher Gate<br /> Administration by:- <br />iomart Hosting Limited<br />Lister Pavilion, Kelvin Campus<br />Glasgow<br />GB<br />http://www.iomart.com</b><br /> ");
+      //  Facility 677
+var bounds_677 = [[52.64141015,-1.1412507872310065],[52.63941015,-1.1392507872310067]];
+var rectangle_677 = L.rectangle(bounds_677, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_677.bindPopup("<b>IXP  Facility 677<br />iomart DC4 Leicester<br />16 Berkley Street<br /> Administration by:- <br />iomart Hosting Limited<br />Lister Pavilion, Kelvin Campus<br />Glasgow<br />GB<br />http://www.iomart.com</b><br /> ");
+      //  Facility 734
+var bounds_734 = [[52.0578192,-0.7579669],[52.0558192,-0.7559669]];
+var rectangle_734 = L.rectangle(bounds_734, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_734.bindPopup("<b>IXP  Facility 734<br />Pulsant Milton Keynes<br />Rockingham Drive<br /> Administration by:- <br />Pulsant (Scotland) Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 745
+var bounds_745 = [[51.750144,-1.269159],[51.748144,-1.2671590000000001]];
+var rectangle_745 = L.rectangle(bounds_745, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_745.bindPopup("<b>IXP  Facility 745<br />Gigastream Oxford 1<br />Unit 4, Oxford Business Centre<br /> Administration by:- <br />Gigastream plc<br /><br /><br /><br /></b><br /> ");
+      //  Facility 764
+var bounds_764 = [[53.464124999999996,-2.239537],[53.462125,-2.237537]];
+var rectangle_764 = L.rectangle(bounds_764, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_764.bindPopup("<b>IXP  Facility 764<br />The UK Grid Network LTD (Greenheys DC)<br />Greenheys, Manchester Science Park<br /> Administration by:- <br />The UK Grid Network LTD<br /><br /><br /><br /></b><br /> ");
+      //  Facility 832
+var bounds_832 = [[51.523463,-0.63005],[51.521463000000004,-0.62805]];
+var rectangle_832 = L.rectangle(bounds_832, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_832.bindPopup("<b>IXP  Facility 832<br />Equinix LD5 - London, Slough<br />8 Buckingham Avenue<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 835
+var bounds_835 = [[51.5128813,-0.0020296000000000003],[51.5108813,-2.960000000000007e-05]];
+var rectangle_835 = L.rectangle(bounds_835, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_835.bindPopup("<b>IXP  Facility 835<br />Telehouse - London (Docklands West)<br />14 Coriander Avenue<br /> Administration by:- <br />Telehouse - Global Data Centers<br />3-10-10 Iidabashi<br />Chiyoda-ku<br />JP<br />http://www.telehouse.com</b><br /> ");
+      //  Facility 840
+var bounds_840 = [[51.461070299999996,-0.9946638],[51.4590703,-0.9926638]];
+var rectangle_840 = L.rectangle(bounds_840, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_840.bindPopup("<b>IXP  Facility 840<br />Reading Data<br />58 Portman Road<br /> Administration by:- <br />Amatis Networks<br /><br /><br /><br /></b><br /> ");
+      //  Facility 896
+var bounds_896 = [[53.794329,-1.54209],[53.792329,-1.5400900000000002]];
+var rectangle_896 = L.rectangle(bounds_896, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_896.bindPopup("<b>IXP  Facility 896<br />aql Salem Church<br />11-15 Hunslet Road<br /> Administration by:- <br />(aq) networks limited<br />13-15 Hunslet Road<br />Leeds<br />GB<br />https://www.aql.com</b><br /> ");
+      //  Facility 990
+var bounds_990 = [[51.348292,-0.481173],[51.346292000000005,-0.479173]];
+var rectangle_990 = L.rectangle(bounds_990, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_990.bindPopup("<b>IXP  Facility 990<br />4D Surrey<br />122 Oyster Lane<br /> Administration by:- <br />4D Data Centres Ltd<br />122 Oyster Lane<br />Byfleet<br />GB<br />http://www.4d-dc.com/</b><br /> ");
+      //  Facility 1027
+var bounds_1027 = [[51.65333068848927,-0.05606174363571605],[51.651330688489274,-0.05406174363571605]];
+var rectangle_1027 = L.rectangle(bounds_1027, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1027.bindPopup("<b>IXP  Facility 1027<br />VIRTUS LONDON1 (Enfield)<br />Unit 3, Trade City, Crown Road<br /> Administration by:- <br />VIRTUS Data Centres<br />2nd Floor, Kent House<br />London<br />GB<br />http://www.virtusdatacentres.com</b><br /> ");
+      //  Facility 1054
+var bounds_1054 = [[53.462177,-2.3276909999999997],[53.460177,-2.325691]];
+var rectangle_1054 = L.rectangle(bounds_1054, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1054.bindPopup("<b>IXP  Facility 1054<br />M247 Ball Green<br />1-3 Ball Green<br /> Administration by:- <br />M247 Ltd<br />Turing House<br />Manchester<br />GB<br />http://www.m247.com</b><br /> ");
+      //  Facility 1074
+var bounds_1074 = [[51.535768,-0.26186],[51.533768,-0.25986]];
+var rectangle_1074 = L.rectangle(bounds_1074, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1074.bindPopup("<b>IXP  Facility 1074<br />Options West London Data Centre<br />3 Waxlow Road<br /> Administration by:- <br />Options Technology Ltd.<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1139
+var bounds_1139 = [[52.277864,-0.878933],[52.275864000000006,-0.876933]];
+var rectangle_1139 = L.rectangle(bounds_1139, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1139.bindPopup("<b>IXP  Facility 1139<br />Host-it Northampton (NNDC-2)<br />Northampton Science Park<br /> Administration by:- <br />Nuco Technologies Ltd<br />1 Brick Close<br />Milton Keynes<br />GB<br />http://www.nucotechnologies.com</b><br /> ");
+      //  Facility 1140
+var bounds_1140 = [[52.043979699999994,-0.7599607],[52.0419797,-0.7579607]];
+var rectangle_1140 = L.rectangle(bounds_1140, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1140.bindPopup("<b>IXP  Facility 1140<br />Host-it Bletchley (MKDC-1)<br /><br /> Administration by:- <br />Nuco Technologies Ltd<br />1 Brick Close<br />Milton Keynes<br />GB<br />http://www.nucotechnologies.com</b><br /> ");
+      //  Facility 1206
+var bounds_1206 = [[53.409774999999996,-2.9344129999999997],[53.407775,-2.932413]];
+var rectangle_1206 = L.rectangle(bounds_1206, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1206.bindPopup("<b>IXP  Facility 1206<br />AIMES DC2 Kilby House<br />Kilby House<br /> Administration by:- <br />AIMES<br />Liverpool Innovation Park<br />Liverpool<br />GB<br />http://www.aimes.uk</b><br /> ");
+      //  Facility 1207
+var bounds_1207 = [[50.725058,-1.9073079999999998],[50.723058,-1.905308]];
+var rectangle_1207 = L.rectangle(bounds_1207, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1207.bindPopup("<b>IXP  Facility 1207<br />Bournemouth Data Centre<br />County Gates House<br /> Administration by:- <br />CloudCoCo Connect Limited<br />CloudCoCo Connect Limited<br />Warrington<br />GB<br />http://www.cloudcoco.co.uk</b><br /> ");
+      //  Facility 1242
+var bounds_1242 = [[51.32552,-0.585986],[51.32352,-0.583986]];
+var rectangle_1242 = L.rectangle(bounds_1242, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1242.bindPopup("<b>IXP  Facility 1242<br />Interxion London (Woking 2)<br />Unit 21, Goldsworth Park Trading Est.<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 1243
+var bounds_1243 = [[53.465408,-2.2472719999999997],[53.463408,-2.245272]];
+var rectangle_1243 = L.rectangle(bounds_1243, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1243.bindPopup("<b>IXP  Facility 1243<br />iomart DC6 Turing House<br />Turing House<br /> Administration by:- <br />Melbourne Server Hosting<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1263
+var bounds_1263 = [[51.568301,-0.232872],[51.566301,-0.230872]];
+var rectangle_1263 = L.rectangle(bounds_1263, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1263.bindPopup("<b>IXP  Facility 1263<br />LDeX1<br />Units 8 - 10, The Oxgate Business Centre<br /> Administration by:- <br />LDeX Group Ltd<br />Units 8 - 10 The Oxgate Business Centre<br />London<br />GB<br />http://www.ldexgroup.co.uk</b><br /> ");
+      //  Facility 1264
+var bounds_1264 = [[53.465422999999994,-2.247751],[53.463423,-2.2457510000000003]];
+var rectangle_1264 = L.rectangle(bounds_1264, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1264.bindPopup("<b>IXP  Facility 1264<br />iomart DC7 The Server Hotel Reynolds<br />Reynolds House<br /> Administration by:- <br />Melbourne Server Hosting<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1265
+var bounds_1265 = [[53.462255,-2.24241],[53.460255000000004,-2.2404100000000002]];
+var rectangle_1265 = L.rectangle(bounds_1265, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1265.bindPopup("<b>IXP  Facility 1265<br />Greenheys<br />Greenheys<br /> Administration by:- <br />Melbourne Server Hosting<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1267
+var bounds_1267 = [[51.495644,-0.019318000000000002],[51.493644,-0.017318]];
+var rectangle_1267 = L.rectangle(bounds_1267, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1267.bindPopup("<b>IXP  Facility 1267<br />QiComm Tutis Point<br />5 Greenwich View Place<br /> Administration by:- <br />Docklands Data Centre Limited<br />City Reach, 5 Greenwich View Place<br />London<br />GB<br />https://www.docklands-dc.com/</b><br /> ");
+      //  Facility 1300
+var bounds_1300 = [[53.462177,-2.3276909999999997],[53.460177,-2.325691]];
+var rectangle_1300 = L.rectangle(bounds_1300, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1300.bindPopup("<b>IXP  Facility 1300<br />MANOC 4<br />7 Adbaston Road<br /> Administration by:- <br />UKFast.net Limited<br />UKFast Campus<br />Manchester<br />GB<br />https://www.ukfast.co.uk</b><br /> ");
+      //  Facility 1311
+var bounds_1311 = [[52.277889699999996,-1.8961668999999999],[52.2758897,-1.8941669]];
+var rectangle_1311 = L.rectangle(bounds_1311, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1311.bindPopup("<b>IXP  Facility 1311<br />Six Degrees Studley South<br />Birmingham Road<br /> Administration by:- <br />Six Degrees<br />Commodity Quay<br />London<br />GB<br />http://www.6dg.co.uk</b><br /> ");
+      //  Facility 1312
+var bounds_1312 = [[52.277889699999996,-1.8961668999999999],[52.2758897,-1.8941669]];
+var rectangle_1312 = L.rectangle(bounds_1312, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1312.bindPopup("<b>IXP  Facility 1312<br />Six Degrees Studley North<br />Birmingham Road<br /> Administration by:- <br />Six Degrees<br />Commodity Quay<br />London<br />GB<br />http://www.6dg.co.uk</b><br /> ");
+      //  Facility 1331
+var bounds_1331 = [[51.798555,-0.204813],[51.796555000000005,-0.202813]];
+var rectangle_1331 = L.rectangle(bounds_1331, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1331.bindPopup("<b>IXP  Facility 1331<br />ServerChoice  SC-2<br />BioPark, Broadwater Road,<br /> Administration by:- <br />ServerChoice Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1372
+var bounds_1372 = [[50.86938,-1.2490059999999998],[50.867380000000004,-1.247006]];
+var rectangle_1372 = L.rectangle(bounds_1372, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1372.bindPopup("<b>IXP  Facility 1372<br />Neos Networks Hampshire<br />18 Brunel Way<br /> Administration by:- <br />Neos Networks<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1388
+var bounds_1388 = [[51.521432,-0.619277],[51.519432,-0.617277]];
+var rectangle_1388 = L.rectangle(bounds_1388, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1388.bindPopup("<b>IXP  Facility 1388<br />Rackspace London Slough (LON3)<br />115 Buckingham Avenue<br /> Administration by:- <br />Rackspace<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1403
+var bounds_1403 = [[53.469674,-2.3114209999999997],[53.467674,-2.309421]];
+var rectangle_1403 = L.rectangle(bounds_1403, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1403.bindPopup("<b>IXP  Facility 1403<br />Equinix MA3 - Manchester, Joule House<br />76 Trafford Park Road<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 1409
+var bounds_1409 = [[51.299837,-0.831296],[51.297837,-0.829296]];
+var rectangle_1409 = L.rectangle(bounds_1409, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1409.bindPopup("<b>IXP  Facility 1409<br />Aspen House Fleet<br />Aspen House, Barley Way, Ancells Business Park<br /> Administration by:- <br />Datanet.co.uk Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1547
+var bounds_1547 = [[51.524353,-0.102245],[51.522353,-0.100245]];
+var rectangle_1547 = L.rectangle(bounds_1547, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1547.bindPopup("<b>IXP  Facility 1547<br />Volta<br />36-43 Great Sutton Street<br /> Administration by:- <br />Volta<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1548
+var bounds_1548 = [[51.5558,-3.0391999999999997],[51.5538,-3.0372]];
+var rectangle_1548 = L.rectangle(bounds_1548, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1548.bindPopup("<b>IXP  Facility 1548<br />NGD Newport<br />Celtic Way<br /> Administration by:- <br />Next Generation Data<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1680
+var bounds_1680 = [[56.464687999999995,-3.0561],[56.462688,-3.0541]];
+var rectangle_1680 = L.rectangle(bounds_1680, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1680.bindPopup("<b>IXP  Facility 1680<br />brightsolid Dundee Data Centre<br />Gateway House<br /> Administration by:- <br />brightsolid Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1683
+var bounds_1683 = [[53.461558,-2.3248892999999997],[53.459558,-2.3228893]];
+var rectangle_1683 = L.rectangle(bounds_1683, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1683.bindPopup("<b>IXP  Facility 1683<br />Manoc 5<br />Unit 19 Blackmore Road<br /> Administration by:- <br />UKFast.net Limited<br />UKFast Campus<br />Manchester<br />GB<br />https://www.ukfast.co.uk</b><br /> ");
+      //  Facility 1684
+var bounds_1684 = [[53.46179870865286,-2.3248013877644063],[53.45979870865286,-2.3228013877644065]];
+var rectangle_1684 = L.rectangle(bounds_1684, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1684.bindPopup("<b>IXP  Facility 1684<br />Manoc 6&7<br />Unit 20a & 20b Blackmore Road<br /> Administration by:- <br />UKFast.net Limited<br />UKFast Campus<br />Manchester<br />GB<br />https://www.ukfast.co.uk</b><br /> ");
+      //  Facility 1699
+var bounds_1699 = [[51.889343999999994,-0.205682],[51.887344,-0.203682]];
+var rectangle_1699 = L.rectangle(bounds_1699, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1699.bindPopup("<b>IXP  Facility 1699<br />ServerChoice SC-1<br />Unit HJK, Gateway 1000,<br /> Administration by:- <br />ServerChoice Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1702
+var bounds_1702 = [[54.961971,-1.633163],[54.959971,-1.6311630000000001]];
+var rectangle_1702 = L.rectangle(bounds_1702, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1702.bindPopup("<b>IXP  Facility 1702<br />Reliance House<br />Reliance House<br /> Administration by:- <br />Wildcard Networks<br />Reliance House<br />Newcastle upon Tyne<br />GB<br />http://www.wildcard.net.uk</b><br /> ");
+      //  Facility 1728
+var bounds_1728 = [[51.895309999999995,-2.060132],[51.89331,-2.058132]];
+var rectangle_1728 = L.rectangle(bounds_1728, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1728.bindPopup("<b>IXP  Facility 1728<br />Safehosts Cheltenham<br />Saxon House<br /> Administration by:- <br />SAFE HOSTS INTERNET LLP<br />Saxon House<br />Cheltenahm<br />GB<br />https://safehosts.co.uk</b><br /> ");
+      //  Facility 1740
+var bounds_1740 = [[50.826505999999995,-1.1640419999999998],[50.824506,-1.162042]];
+var rectangle_1740 = L.rectangle(bounds_1740, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1740.bindPopup("<b>IXP  Facility 1740<br />iomart DC9 Gosport<br />2 Frater Gate Business Park<br /> Administration by:- <br />iomart Hosting Limited<br />Lister Pavilion, Kelvin Campus<br />Glasgow<br />GB<br />http://www.iomart.com</b><br /> ");
+      //  Facility 1753
+var bounds_1753 = [[51.426843999999996,-0.97643],[51.424844,-0.97443]];
+var rectangle_1753 = L.rectangle(bounds_1753, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1753.bindPopup("<b>IXP  Facility 1753<br />Daisy Reading<br />1 Transcentral Bennet Road<br /> Administration by:- <br />Daisy Communications<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1792
+var bounds_1792 = [[51.513487,-0.113216],[51.511487,-0.111216]];
+var rectangle_1792 = L.rectangle(bounds_1792, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1792.bindPopup("<b>IXP  Facility 1792<br />Interxion London (Chessington)<br />Fountain Court<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 1793
+var bounds_1793 = [[51.24868870880858,-0.15814624340282543],[51.246688708808584,-0.15614624340282543]];
+var rectangle_1793 = L.rectangle(bounds_1793, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1793.bindPopup("<b>IXP  Facility 1793<br />Interxion London (Redhill)<br />3 Foxboro Business Park<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 1802
+var bounds_1802 = [[55.930394,-3.4110199999999997],[55.928394000000004,-3.40902]];
+var rectangle_1802 = L.rectangle(bounds_1802, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1802.bindPopup("<b>IXP  Facility 1802<br />Pulsant Edinburgh Newbridge<br />7 Claylands Road<br /> Administration by:- <br />Pulsant (Scotland) Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1817
+var bounds_1817 = [[51.479186999999996,-3.1815819999999997],[51.477187,-3.179582]];
+var rectangle_1817 = L.rectangle(bounds_1817, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1817.bindPopup("<b>IXP  Facility 1817<br />BT Empire Exchange / Stadium House <br />5  Park Street<br /> Administration by:- <br />BT Empire Exchange / Stadium House<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1827
+var bounds_1827 = [[53.796119999999995,-1.763407],[53.79412,-1.7614070000000002]];
+var rectangle_1827 = L.rectangle(bounds_1827, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1827.bindPopup("<b>IXP  Facility 1827<br />Legend Bradford<br />167-169 Sunbridge Road<br /> Administration by:- <br />Legend Telecom Ltd<br />167-169 Sunbridge Road<br />Bradford<br />GB<br />http://www.legendtelecom.co.uk</b><br /> ");
+      //  Facility 1843
+var bounds_1843 = [[52.042812999999995,-0.822027],[52.040813,-0.820027]];
+var rectangle_1843 = L.rectangle(bounds_1843, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1843.bindPopup("<b>IXP  Facility 1843<br />Host-it Milton Keynes (MKDC-0)<br />1 Brick Close<br /> Administration by:- <br />Nuco Technologies Ltd<br />1 Brick Close<br />Milton Keynes<br />GB<br />http://www.nucotechnologies.com</b><br /> ");
+      //  Facility 1848
+var bounds_1848 = [[53.3816626,-1.4712277999999999],[53.3796626,-1.4692278]];
+var rectangle_1848 = L.rectangle(bounds_1848, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1848.bindPopup("<b>IXP  Facility 1848<br />Ask 4 DC1 - Sheffield<br /><br /> Administration by:- <br />Ask4 Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 1934
+var bounds_1934 = [[51.500234,-0.015255000000000001],[51.498234000000004,-0.013255]];
+var rectangle_1934 = L.rectangle(bounds_1934, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1934.bindPopup("<b>IXP  Facility 1934<br />Arelion London HEX<br />1 Harbour Exchange Square<br /> Administration by:- <br />Arelion<br /><br /><br /><br />https://www.arelion.com/</b><br /> ");
+      //  Facility 1959
+var bounds_1959 = [[53.980610999999996,-1.131668],[53.978611,-1.1296680000000001]];
+var rectangle_1959 = L.rectangle(bounds_1959, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1959.bindPopup("<b>IXP  Facility 1959<br />Bytemark YO26 DC1<br />2 Opus Avenue<br /> Administration by:- <br />Bytemark Limited<br />2 Opus Avenue<br />York<br />GB<br />https://www.bytemark.co.uk</b><br /> ");
+      //  Facility 1963
+var bounds_1963 = [[51.324497,-0.588003],[51.322497000000006,-0.586003]];
+var rectangle_1963 = L.rectangle(bounds_1963, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_1963.bindPopup("<b>IXP  Facility 1963<br />Interxion London (Woking)<br />Unit 21, Goldsworth Park Trading Estate<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 2116
+var bounds_2116 = [[51.4894429,0.029722099999999998],[51.487442900000005,0.031722099999999996]];
+var rectangle_2116 = L.rectangle(bounds_2116, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2116.bindPopup("<b>IXP  Facility 2116<br />Six Degrees London 1<br />Anchor and Hope Lane<br /> Administration by:- <br />Six Degrees<br />Commodity Quay<br />London<br />GB<br />http://www.6dg.co.uk</b><br /> ");
+      //  Facility 2117
+var bounds_2117 = [[50.849112,-1.1673969999999998],[50.847112,-1.165397]];
+var rectangle_2117 = L.rectangle(bounds_2117, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2117.bindPopup("<b>IXP  Facility 2117<br />ServerHouse P1<br />Delme Place<br /> Administration by:- <br />ServerHouse<br />2 Delme Place<br />Fareham<br />GB<br />http://www.serverhouse.co.uk</b><br /> ");
+      //  Facility 2168
+var bounds_2168 = [[52.638244,-2.121423],[52.636244000000005,-2.1194230000000003]];
+var rectangle_2168 = L.rectangle(bounds_2168, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2168.bindPopup("<b>IXP  Facility 2168<br />Midlands Technology Centre<br />Midlands Technology Centre<br /> Administration by:- <br />Oosha Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 2192
+var bounds_2192 = [[51.428754999999995,-0.98025],[51.426755,-0.97825]];
+var rectangle_2192 = L.rectangle(bounds_2192, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2192.bindPopup("<b>IXP  Facility 2192<br />Amito Reading Link33<br />Unit 2, Smallmead Road<br /> Administration by:- <br />Amito Ltd<br />Unit 2, Smallmead Road<br />Reading<br />GB<br />http://www.amito.com</b><br /> ");
+      //  Facility 2229
+var bounds_2229 = [[52.719606,-2.4831589999999997],[52.717606,-2.481159]];
+var rectangle_2229 = L.rectangle(bounds_2229, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2229.bindPopup("<b>IXP  Facility 2229<br />Nasstar GBTEL01 Datapoint House<br />Datapoint House<br /> Administration by:- <br />Nasstar Plc<br />Datapoint House 400 Queensway Business Park<br />Telford<br />GB<br />http://www.nasstar.com</b><br /> ");
+      //  Facility 2262
+var bounds_2262 = [[51.525335,-0.63904],[51.523335,-0.63704]];
+var rectangle_2262 = L.rectangle(bounds_2262, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2262.bindPopup("<b>IXP  Facility 2262<br />Equinix LD6 - London, Slough<br />352 Buckingham Avenue<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 2277
+var bounds_2277 = [[51.280501,-0.793355],[51.278501000000006,-0.791355]];
+var rectangle_2277 = L.rectangle(bounds_2277, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2277.bindPopup("<b>IXP  Facility 2277<br />Datum<br />Cody Technology Park<br /> Administration by:- <br />Datum Datacentres Limited<br /><br /><br /><br /></b><br /> ");
+      //  Facility 2345
+var bounds_2345 = [[52.588497999999994,-2.124162],[52.586498,-2.1221620000000003]];
+var rectangle_2345 = L.rectangle(bounds_2345, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2345.bindPopup("<b>IXP  Facility 2345<br />Chubb Buildings<br />Chubb Buildings<br /> Administration by:- <br />Oosha Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 2360
+var bounds_2360 = [[53.467918999999995,-2.295242],[53.465919,-2.2932420000000002]];
+var rectangle_2360 = L.rectangle(bounds_2360, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2360.bindPopup("<b>IXP  Facility 2360<br />LDeX2<br />Unit 6, Waterside<br /> Administration by:- <br />LDeX Group Ltd<br />Units 8 - 10 The Oxgate Business Centre<br />London<br />GB<br />http://www.ldexgroup.co.uk</b><br /> ");
+      //  Facility 2384
+var bounds_2384 = [[53.793418011873655,-1.541471925077685],[53.79141801187366,-1.5394719250776852]];
+var rectangle_2384 = L.rectangle(bounds_2384, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2384.bindPopup("<b>IXP  Facility 2384<br />aql DC5<br />Canon House, Apex Way<br /> Administration by:- <br />(aq) networks limited<br />13-15 Hunslet Road<br />Leeds<br />GB<br />https://www.aql.com</b><br /> ");
+      //  Facility 2417
+var bounds_2417 = [[57.1516891,-2.1796995999999997],[57.1496891,-2.1776996]];
+var rectangle_2417 = L.rectangle(bounds_2417, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2417.bindPopup("<b>IXP  Facility 2417<br />brightsolid Aberdeen Data Centre<br />Lang Stracht<br /> Administration by:- <br />brightsolid Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 2429
+var bounds_2429 = [[51.420688,-2.2169179999999997],[51.418688,-2.214918]];
+var rectangle_2429 = L.rectangle(bounds_2429, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2429.bindPopup("<b>IXP  Facility 2429<br />Ark Data Centres - Spring Park - SQ17, P1, P2, P3, P4, P5<br />Westwells Road<br /> Administration by:- <br />Ark Data Centres<br />Spring Park<br />Corsham<br />GB<br />https://arkdatacentres.co.uk/</b><br /> ");
+      //  Facility 2627
+var bounds_2627 = [[51.517486999999996,-0.618882],[51.515487,-0.616882]];
+var rectangle_2627 = L.rectangle(bounds_2627, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2627.bindPopup("<b>IXP  Facility 2627<br />Cyxtera London (LHR1)<br />630 Ajax Ave.<br /> Administration by:- <br />Cyxtera Technologies, Inc.<br />BAC Colonnade Office Towers<br />Coral Gables<br />US<br />https://www.cyxtera.com/</b><br /> ");
+      //  Facility 2628
+var bounds_2628 = [[51.495703999999996,-0.019699],[51.493704,-0.017699]];
+var rectangle_2628 = L.rectangle(bounds_2628, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2628.bindPopup("<b>IXP  Facility 2628<br />Cyxtera London (LHR2)<br />7 Greenwich View Pl<br /> Administration by:- <br />Cyxtera Technologies, Inc.<br />BAC Colonnade Office Towers<br />Coral Gables<br />US<br />https://www.cyxtera.com/</b><br /> ");
+      //  Facility 2631
+var bounds_2631 = [[51.440042,-0.882352],[51.438042,-0.880352]];
+var rectangle_2631 = L.rectangle(bounds_2631, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2631.bindPopup("<b>IXP  Facility 2631<br />Cyxtera London (LHR3)<br />Eskdale Road<br /> Administration by:- <br />Cyxtera Technologies, Inc.<br />BAC Colonnade Office Towers<br />Coral Gables<br />US<br />https://www.cyxtera.com/</b><br /> ");
+      //  Facility 2682
+var bounds_2682 = [[51.280882,0.548373],[51.278882,0.550373]];
+var rectangle_2682 = L.rectangle(bounds_2682, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2682.bindPopup("<b>IXP  Facility 2682<br />Custodian DataCentres<br />Custodian DataCentres<br /> Administration by:- <br />CustodianDC LTD.<br />Custodian DataCentres<br />Maidstone<br />GB<br />https://www.CustodianDC.com</b><br /> ");
+      //  Facility 2807
+var bounds_2807 = [[53.396361999999996,-2.981006],[53.394362,-2.979006]];
+var rectangle_2807 = L.rectangle(bounds_2807, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2807.bindPopup("<b>IXP  Facility 2807<br />DC01 -Baltic Creative<br />49 Jamaica St<br /> Administration by:- <br />IX Liverpool Limited<br />Studio F<br />Liverpool<br />GB<br />http://www.ixliverpool.net</b><br /> ");
+      //  Facility 2894
+var bounds_2894 = [[51.529789,-0.726424],[51.527789000000006,-0.724424]];
+var rectangle_2894 = L.rectangle(bounds_2894, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2894.bindPopup("<b>IXP  Facility 2894<br />iomart DC5 Maidenhead<br />Spectrum House, Clivemont Road<br /> Administration by:- <br />iomart Hosting Limited<br />Lister Pavilion, Kelvin Campus<br />Glasgow<br />GB<br />http://www.iomart.com</b><br /> ");
+      //  Facility 2907
+var bounds_2907 = [[53.462506,-2.239131],[53.460506,-2.237131]];
+var rectangle_2907 = L.rectangle(bounds_2907, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2907.bindPopup("<b>IXP  Facility 2907<br />Equinix MA4 - Manchester, Synergy House<br />Synergy House<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 2992
+var bounds_2992 = [[55.835442,-3.9535199999999997],[55.833442000000005,-3.95152]];
+var rectangle_2992 = L.rectangle(bounds_2992, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_2992.bindPopup("<b>IXP  Facility 2992<br />DataVita Glasgow (DC1/DC2)<br />Unit 1 York Road<br /> Administration by:- <br />DataVita Ltd<br />Unit 1 York Road<br />Glasgow<br />GB<br />http://www.datavita.co.uk</b><br /> ");
+      //  Facility 3144
+var bounds_3144 = [[50.832526699999995,-0.1352057],[50.8305267,-0.1332057]];
+var rectangle_3144 = L.rectangle(bounds_3144, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_3144.bindPopup("<b>IXP  Facility 3144<br />Fastnet Brighton Datacentre<br />Ditchling Road<br /> Administration by:- <br />Fastnet<br />Ditchling Road<br />Brighton<br />GB<br />http://fastnet.co.uk</b><br /> ");
+      //  Facility 3150
+var bounds_3150 = [[52.602610999999996,-2.1113109999999997],[52.600611,-2.109311]];
+var rectangle_3150 = L.rectangle(bounds_3150, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_3150.bindPopup("<b>IXP  Facility 3150<br />VeloxServ DC1<br />Merryhills Enterprise Park<br /> Administration by:- <br />VeloxServ Communications Ltd<br /><br />Wolverhampton<br />GB<br />https://www.veloxserv.co.uk</b><br /> ");
+      //  Facility 3152
+var bounds_3152 = [[51.523042,-0.624736],[51.521042,-0.622736]];
+var rectangle_3152 = L.rectangle(bounds_3152, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_3152.bindPopup("<b>IXP  Facility 3152<br />Equinix LD10 - London, Slough<br />13 Liverpool Road<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 3213
+var bounds_3213 = [[52.47829951633814,-1.8781037589558873],[52.476299516338145,-1.8761037589558875]];
+var rectangle_3213 = L.rectangle(bounds_3213, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_3213.bindPopup("<b>IXP  Facility 3213<br />Six Degrees Birmingham Central<br />Garrison Technology Park<br /> Administration by:- <br />Six Degrees<br />Commodity Quay<br />London<br />GB<br />http://www.6dg.co.uk</b><br /> ");
+      //  Facility 3226
+var bounds_3226 = [[53.334519,-1.3408799999999998],[53.332519000000005,-1.33888]];
+var rectangle_3226 = L.rectangle(bounds_3226, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_3226.bindPopup("<b>IXP  Facility 3226<br />HA Hosting DC1<br />Unit 9<br /> Administration by:- <br />High Availability Hosting Limited<br />Unit 9<br />Sheffield<br />GB<br />https://www.hahosting.com</b><br /> ");
+      //  Facility 3399
+var bounds_3399 = [[51.525422,-0.087892],[51.523422000000004,-0.085892]];
+var rectangle_3399 = L.rectangle(bounds_3399, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_3399.bindPopup("<b>IXP  Facility 3399<br />Interxion London (Oliver’s Yard)<br />55-71 CITY RD<br /> Administration by:- <br />Interxion - A Digital Realty Company<br />Scorpius 30<br />Hoofddorp<br />NL<br />http://www.interxion.com/</b><br /> ");
+      //  Facility 3631
+var bounds_3631 = [[51.524142999999995,-0.623406],[51.522143,-0.621406]];
+var rectangle_3631 = L.rectangle(bounds_3631, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_3631.bindPopup("<b>IXP  Facility 3631<br />VIRTUS LONDON4 (Slough)<br />14 Liverpool Rd<br /> Administration by:- <br />VIRTUS Data Centres<br />2nd Floor, Kent House<br />London<br />GB<br />http://www.virtusdatacentres.com</b><br /> ");
+      //  Facility 3884
+var bounds_3884 = [[52.9290872,-1.2131614],[52.9270872,-1.2111614000000002]];
+var rectangle_3884 = L.rectangle(bounds_3884, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_3884.bindPopup("<b>IXP  Facility 3884<br />CWCS DCN1<br />Portland Street<br /> Administration by:- <br />CWCS Managed Hosting<br />Portland St<br />Nottingham<br />GB<br />https://www.cwcs.co.cuk</b><br /> ");
+      //  Facility 4060
+var bounds_4060 = [[53.4589752,-2.1614549],[53.4569752,-2.1594549]];
+var rectangle_4060 = L.rectangle(bounds_4060, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4060.bindPopup("<b>IXP  Facility 4060<br />Itility BVDC<br />Hyde Road<br /> Administration by:- <br />Itility Limited<br />Elizabeth House<br />Manchester<br />GB<br />http://www.itility.co.uk</b><br /> ");
+      //  Facility 4088
+var bounds_4088 = [[51.509518,-0.058772],[51.507518000000005,-0.056771999999999996]];
+var rectangle_4088 = L.rectangle(bounds_4088, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4088.bindPopup("<b>IXP  Facility 4088<br />AtlasEdge DC London I<br />Princes Court Wapping Lane<br /> Administration by:- <br />AtlasEdge Data Centres<br />Boeing Avenue 53<br />Schiphol-Rijk<br />NL<br />https://atlasedge.com/</b><br /> ");
+      //  Facility 4089
+var bounds_4089 = [[51.531546999999996,-0.258425],[51.529547,-0.256425]];
+var rectangle_4089 = L.rectangle(bounds_4089, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4089.bindPopup("<b>IXP  Facility 4089<br />COLT DC London II<br />Powergate, Volt Avenue<br /> Administration by:- <br />Colt Technology Services Group<br />Colt House<br />London<br />GB<br />https://www.colt.net</b><br /> ");
+      //  Facility 4149
+var bounds_4149 = [[51.524367,-0.622986],[51.522367,-0.620986]];
+var rectangle_4149 = L.rectangle(bounds_4149, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4149.bindPopup("<b>IXP  Facility 4149<br />CyrusOne London I<br />12 Liverpool Road<br /> Administration by:- <br />CyrusOne<br />2850 N Harwood Rd<br />Dallas<br />US<br />http://www.cyrusone.com</b><br /> ");
+      //  Facility 4150
+var bounds_4150 = [[51.504731,-0.44882],[51.502731000000004,-0.44682]];
+var rectangle_4150 = L.rectangle(bounds_4150, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4150.bindPopup("<b>IXP  Facility 4150<br />CyrusOne London II<br />DC2 Prologis Park Heathrow<br /> Administration by:- <br />CyrusOne<br />2850 N Harwood Rd<br />Dallas<br />US<br />http://www.cyrusone.com</b><br /> ");
+      //  Facility 4231
+var bounds_4231 = [[51.49848,-0.07158],[51.496480000000005,-0.06958]];
+var rectangle_4231 = L.rectangle(bounds_4231, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4231.bindPopup("<b>IXP  Facility 4231<br />Netwise London Central (NLC)<br />Netwise House<br /> Administration by:- <br />Netwise Hosting Ltd<br />Netwise House<br />Bermondsey<br />GB<br />https://www.netwise.co.uk/</b><br /> ");
+      //  Facility 4343
+var bounds_4343 = [[51.133894999999995,-0.17756],[51.131895,-0.17556]];
+var rectangle_4343 = L.rectangle(bounds_4343, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4343.bindPopup("<b>IXP  Facility 4343<br />4D Gatwick (Crawley)<br />17-19 Kelvin Lane<br /> Administration by:- <br />4D Data Centres Ltd<br />122 Oyster Lane<br />Byfleet<br />GB<br />http://www.4d-dc.com/</b><br /> ");
+      //  Facility 4360
+var bounds_4360 = [[51.5128813,-0.0020296000000000003],[51.5108813,-2.960000000000007e-05]];
+var rectangle_4360 = L.rectangle(bounds_4360, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4360.bindPopup("<b>IXP  Facility 4360<br />Telehouse - London (Docklands North Two)<br />14 Coriander Avenue<br /> Administration by:- <br />Telehouse - Global Data Centers<br />3-10-10 Iidabashi<br />Chiyoda-ku<br />JP<br />http://www.telehouse.com</b><br /> ");
+      //  Facility 4404
+var bounds_4404 = [[51.516785999999996,-0.141295],[51.514786,-0.139295]];
+var rectangle_4404 = L.rectangle(bounds_4404, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4404.bindPopup("<b>IXP  Facility 4404<br />VIRTUS LONDON2 (Hayes)<br />VIRTUS Data Centre<br /> Administration by:- <br />VIRTUS Data Centres<br />2nd Floor, Kent House<br />London<br />GB<br />http://www.virtusdatacentres.com</b><br /> ");
+      //  Facility 4462
+var bounds_4462 = [[51.654993999999995,-0.281006],[51.652994,-0.279006]];
+var rectangle_4462 = L.rectangle(bounds_4462, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4462.bindPopup("<b>IXP  Facility 4462<br />Elstree Customer Hosting Centre<br />Regent House<br /> Administration by:- <br />Imerja Ltd<br />101-114 Holloway Head<br />Birmingham<br />GB<br />http://www.intercity.technology</b><br /> ");
+      //  Facility 4463
+var bounds_4463 = [[53.586076999999996,-2.527218],[53.584077,-2.525218]];
+var rectangle_4463 = L.rectangle(bounds_4463, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4463.bindPopup("<b>IXP  Facility 4463<br />Bolton Customer Hosting Centre<br />Hallmark House, Paragon Business Park<br /> Administration by:- <br />Imerja Ltd<br />101-114 Holloway Head<br />Birmingham<br />GB<br />http://www.intercity.technology</b><br /> ");
+      //  Facility 4545
+var bounds_4545 = [[50.868745,-1.24661],[50.866745,-1.2446100000000002]];
+var rectangle_4545 = L.rectangle(bounds_4545, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4545.bindPopup("<b>IXP  Facility 4545<br />ServerHouse F2<br />14 Brunel Way<br /> Administration by:- <br />ServerHouse<br />2 Delme Place<br />Fareham<br />GB<br />http://www.serverhouse.co.uk</b><br /> ");
+      //  Facility 4762
+var bounds_4762 = [[53.411527,-2.9725129999999997],[53.409527000000004,-2.970513]];
+var rectangle_4762 = L.rectangle(bounds_4762, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4762.bindPopup("<b>IXP  Facility 4762<br />DC02 - The Tapestry<br />68-76 Kempston St<br /> Administration by:- <br />IX Liverpool Limited<br />Studio F<br />Liverpool<br />GB<br />http://www.ixliverpool.net</b><br /> ");
+      //  Facility 4885
+var bounds_4885 = [[51.504731,-0.44882],[51.502731000000004,-0.44682]];
+var rectangle_4885 = L.rectangle(bounds_4885, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4885.bindPopup("<b>IXP  Facility 4885<br />VIRTUS LONDON5 (Stockley Park)<br />Prologis Park West London<br /> Administration by:- <br />Clouvider Limited<br />30-34 Moorgate<br />London<br />GB<br />https://www.clouvider.co.uk</b><br /> ");
+      //  Facility 4974
+var bounds_4974 = [[51.526317999999996,-0.08516],[51.524318,-0.08316]];
+var rectangle_4974 = L.rectangle(bounds_4974, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_4974.bindPopup("<b>IXP  Facility 4974<br />Epsilon Global Hubs London<br />Telephone House<br /> Administration by:- <br />Epsilon<br />151 Lorong Chuan, Lobby A, #06-01A<br />Singapore<br />SG<br />http://www.epsilontel.com</b><br /> ");
+      //  Facility 5149
+var bounds_5149 = [[51.495725,-0.275793],[51.493725000000005,-0.273793]];
+var rectangle_5149 = L.rectangle(bounds_5149, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_5149.bindPopup("<b>IXP  Facility 5149<br />Vision247 - Chiswick Datacenter<br />566, Chiswick High Road<br /> Administration by:- <br />Vision247<br />566, Chiswick High Road<br />London<br />GB<br />http://www.vision247.com/</b><br /> ");
+      //  Facility 5238
+var bounds_5238 = [[51.417021,-0.759164],[51.415021,-0.757164]];
+var rectangle_5238 = L.rectangle(bounds_5238, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_5238.bindPopup("<b>IXP  Facility 5238<br />CentriLogic Arlington (ARL)<br />No. 5 Arlington Square<br /> Administration by:- <br />CentriLogic<br />2 Robert Speck Parkway<br />Misssisauga<br />CA<br />http://www.centrilogic.com</b><br /> ");
+      //  Facility 5441
+var bounds_5441 = [[51.44779783988321,-0.4551687124105929],[51.44579783988321,-0.4531687124105929]];
+var rectangle_5441 = L.rectangle(bounds_5441, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_5441.bindPopup("<b>IXP  Facility 5441<br />Serverfarm LON1 London<br />Unit 4, Westgate Industrial Estate<br /> Administration by:- <br />Serverfarm<br />444 N Nash St<br />El Segundo<br />US<br />http://www.serverfarmllc.com</b><br /> ");
+      //  Facility 5993
+var bounds_5993 = [[51.864706,-2.198019],[51.862706,-2.196019]];
+var rectangle_5993 = L.rectangle(bounds_5993, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_5993.bindPopup("<b>IXP  Facility 5993<br />Indectron GCR1 - Gloucester, Shield House<br />Shield House, 2 Crest Way<br /> Administration by:- <br />Indectron Limited<br />Shield House, 2 Crest Way<br />Gloucester<br />GB<br />https://www.indectron.com/</b><br /> ");
+      //  Facility 6347
+var bounds_6347 = [[51.528327,-0.632104],[51.526327,-0.630104]];
+var rectangle_6347 = L.rectangle(bounds_6347, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6347.bindPopup("<b>IXP  Facility 6347<br />Iron Mountain Data Center - London (LON-1)<br />724-729 Dundee Road<br /> Administration by:- <br />Iron Mountain Data Centers<br /><br />Boston<br />US<br />https://www.ironmountain.com/</b><br /> ");
+      //  Facility 6433
+var bounds_6433 = [[52.361307,-1.3290795],[52.359307,-1.3270795000000002]];
+var rectangle_6433 = L.rectangle(bounds_6433, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6433.bindPopup("<b>IXP  Facility 6433<br />Satellite Mediaport<br />Lawford Heath Ln<br /> Administration by:- <br />Satellite Mediaport Services Ltd.<br />Lawford Heath Lane<br />Rugby<br />GB<br />http://www.sms-teleport.com</b><br /> ");
+      //  Facility 6462
+var bounds_6462 = [[52.602610999999996,-2.1113109999999997],[52.600611,-2.109311]];
+var rectangle_6462 = L.rectangle(bounds_6462, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6462.bindPopup("<b>IXP  Facility 6462<br />VeloxServ DC2<br />Merryhills Enterprise Park<br /> Administration by:- <br />VeloxServ Communications Ltd<br /><br />Wolverhampton<br />GB<br />https://www.veloxserv.co.uk</b><br /> ");
+      //  Facility 6482
+var bounds_6482 = [[50.86938,-1.2490059999999998],[50.867380000000004,-1.247006]];
+var rectangle_6482 = L.rectangle(bounds_6482, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6482.bindPopup("<b>IXP  Facility 6482<br />SCC Fareham<br />18 Brunel Way<br /> Administration by:- <br />Specialist Computer Centres PLC<br />James House<br />Birmingham<br />GB<br />https://www.scc.com/</b><br /> ");
+      //  Facility 6483
+var bounds_6483 = [[51.35447,-0.11979000000000001],[51.352470000000004,-0.11779]];
+var rectangle_6483 = L.rectangle(bounds_6483, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6483.bindPopup("<b>IXP  Facility 6483<br />Pulsant South London<br />Unit 1, 35 Imperial Way<br /> Administration by:- <br />Pulsant (Scotland) Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 6535
+var bounds_6535 = [[51.526866,-0.635279],[51.524866,-0.633279]];
+var rectangle_6535 = L.rectangle(bounds_6535, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6535.bindPopup("<b>IXP  Facility 6535<br />Equinix LD7 -  London, Slough<br />6 Banbury Ave<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+      //  Facility 6750
+var bounds_6750 = [[51.495599999999996,-0.019273000000000002],[51.4936,-0.017273]];
+var rectangle_6750 = L.rectangle(bounds_6750, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6750.bindPopup("<b>IXP  Facility 6750<br />Docklands Data Centre<br />5 Greenwich View Place<br /> Administration by:- <br />Docklands Data Centre Ltd<br /><br /><br /><br /></b><br /> ");
+      //  Facility 6767
+var bounds_6767 = [[52.708425,-2.46846],[52.706425,-2.46646]];
+var rectangle_6767 = L.rectangle(bounds_6767, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6767.bindPopup("<b>IXP  Facility 6767<br />Exascale Telford<br />Unit 26<br /> Administration by:- <br />Exascale<br />Exascale Ltd<br />Telford<br />GB<br />https://www.exascale.co.uk</b><br /> ");
+      //  Facility 6893
+var bounds_6893 = [[50.847153999999996,-1.1694619999999998],[50.845154,-1.167462]];
+var rectangle_6893 = L.rectangle(bounds_6893, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6893.bindPopup("<b>IXP  Facility 6893<br />ServerHouse F1<br />Walled Garden, Cams Estate<br /> Administration by:- <br />ServerHouse<br />2 Delme Place<br />Fareham<br />GB<br />http://www.serverhouse.co.uk</b><br /> ");
+      //  Facility 6894
+var bounds_6894 = [[50.849702,-1.166861],[50.847702000000005,-1.1648610000000001]];
+var rectangle_6894 = L.rectangle(bounds_6894, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6894.bindPopup("<b>IXP  Facility 6894<br />ServerHouse P2<br />West Barn<br /> Administration by:- <br />ServerHouse<br />2 Delme Place<br />Fareham<br />GB<br />http://www.serverhouse.co.uk</b><br /> ");
+      //  Facility 6923
+var bounds_6923 = [[51.518122,-0.140392],[51.516122,-0.138392]];
+var rectangle_6923 = L.rectangle(bounds_6923, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_6923.bindPopup("<b>IXP  Facility 6923<br />Talia London<br />9A Margaret Street<br /> Administration by:- <br />Talia Limited<br />9A Margaret Street<br />London<br />GB<br />https://www.talia.net/</b><br /> ");
+      //  Facility 7042
+var bounds_7042 = [[51.782860299999996,0.1315134],[51.7808603,0.1335134]];
+var rectangle_7042 = L.rectangle(bounds_7042, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_7042.bindPopup("<b>IXP  Facility 7042<br />Kao Data Campus<br />London Road<br /> Administration by:- <br />Harlow Operations Limited<br /><br /><br />GB<br />http://www.kaodata.com/</b><br /> ");
+      //  Facility 7216
+var bounds_7216 = [[51.584632,0.464743],[51.582632000000004,0.466743]];
+var rectangle_7216 = L.rectangle(bounds_7216, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_7216.bindPopup("<b>IXP  Facility 7216<br />ChunkyChips Data Centre<br />Carnival Business Park<br /> Administration by:- <br />ChunkyChips.net Limited<br />Unit 9<br />Basildon<br />GB<br />https://chunkychips.net</b><br /> ");
+      //  Facility 7425
+var bounds_7425 = [[51.5469197,0.1662786],[51.5449197,0.1682786]];
+var rectangle_7425 = L.rectangle(bounds_7425, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_7425.bindPopup("<b>IXP  Facility 7425<br />NTT London 1 Data Center (LON1)<br />Yew Tree Avenue<br /> Administration by:- <br />NTT Global Data Centers<br />Voltastrasse 15<br />Hattersheim am Main<br />DE<br />https://datacenter.hello.global.ntt</b><br /> ");
+      //  Facility 7500
+var bounds_7500 = [[51.468365999999996,-0.400428],[51.466366,-0.398428]];
+var rectangle_7500 = L.rectangle(bounds_7500, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_7500.bindPopup("<b>IXP  Facility 7500<br />Sungard AS London Technology Centre<br />Unit B, Heathrow Corporate Park<br /> Administration by:- <br />Sungard Availability Services<br />401 North Broad Street<br />Philadelphia<br />US<br />https://www.sungardas.com/</b><br /> ");
+      //  Facility 8078
+var bounds_8078 = [[51.2901703,-0.7808997],[51.288170300000004,-0.7788997]];
+var rectangle_8078 = L.rectangle(bounds_8078, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8078.bindPopup("<b>IXP  Facility 8078<br />Ark Data Centres - Cody Park - A9, A101, A102, A103, A104, A105<br />Old Ively Rd<br /> Administration by:- <br />Ark Data Centres<br />Spring Park<br />Corsham<br />GB<br />https://arkdatacentres.co.uk/</b><br /> ");
+      //  Facility 8381
+var bounds_8381 = [[51.516332,0.001497],[51.514332,0.003497]];
+var rectangle_8381 = L.rectangle(bounds_8381, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8381.bindPopup("<b>IXP  Facility 8381<br />IP House Data Centre<br />20 Lanrick Road<br /> Administration by:- <br />IP House Ltd<br />20 Lanrick Road<br />Poplar<br />GB<br />https://www.ip-house.co.uk/</b><br /> ");
+      //  Facility 8389
+var bounds_8389 = [[55.017869,-1.501107],[55.015869,-1.4991070000000002]];
+var rectangle_8389 = L.rectangle(bounds_8389, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8389.bindPopup("<b>IXP  Facility 8389<br />Stellium 1<br />9 Cobalt Park Way<br /> Administration by:- <br />Stellium Datacentres Limited<br />9 Cobalt Park Way<br />Tyne & Wear<br />GB<br />https://www.stelliumdc.com/</b><br /> ");
+      //  Facility 8390
+var bounds_8390 = [[55.017869,-1.501107],[55.015869,-1.4991070000000002]];
+var rectangle_8390 = L.rectangle(bounds_8390, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8390.bindPopup("<b>IXP  Facility 8390<br />Stellium 2 & 3<br />9 Cobalt Park Way<br /> Administration by:- <br />Stellium Datacentres Limited<br />9 Cobalt Park Way<br />Tyne & Wear<br />GB<br />https://www.stelliumdc.com/</b><br /> ");
+      //  Facility 8445
+var bounds_8445 = [[52.720444,-2.457604],[52.718444000000005,-2.455604]];
+var rectangle_8445 = L.rectangle(bounds_8445, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8445.bindPopup("<b>IXP  Facility 8445<br />Timico - Telford (TEL)<br />Timico Limited<br /> Administration by:- <br />Digital Space Group Ltd<br />Digital Space Group Ltd<br />Newark<br />GB<br />https://www.digitalspace.co.uk/</b><br /> ");
+      //  Facility 8447
+var bounds_8447 = [[52.763453,-2.365986],[52.761453,-2.363986]];
+var rectangle_8447 = L.rectangle(bounds_8447, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8447.bindPopup("<b>IXP  Facility 8447<br />Timico - Newport (NPT)<br />Timico Limited<br /> Administration by:- <br />Digital Space Group Ltd<br />Digital Space Group Ltd<br />Newark<br />GB<br />https://www.digitalspace.co.uk/</b><br /> ");
+      //  Facility 8825
+var bounds_8825 = [[53.7941,-1.541874],[53.792100000000005,-1.5398740000000002]];
+var rectangle_8825 = L.rectangle(bounds_8825, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8825.bindPopup("<b>IXP  Facility 8825<br />aql DC3<br />aql<br /> Administration by:- <br />(aq) networks limited<br />13-15 Hunslet Road<br />Leeds<br />GB<br />https://www.aql.com</b><br /> ");
+      //  Facility 8872
+var bounds_8872 = [[51.448068,-0.454265],[51.446068000000004,-0.452265]];
+var rectangle_8872 = L.rectangle(bounds_8872, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8872.bindPopup("<b>IXP  Facility 8872<br />DataBank London (LHR1)<br />Unit 4, Westgate Estate, Staines Road<br /> Administration by:- <br />DataBank, Ltd.<br />400 S. Akard<br />Dallas<br />US<br />http://www.databank.com</b><br /> ");
+      //  Facility 8983
+var bounds_8983 = [[51.521561,-0.00221],[51.519561,-0.0002099999999999999]];
+var rectangle_8983 = L.rectangle(bounds_8983, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8983.bindPopup("<b>IXP  Facility 8983<br />Netwise London East (NLE)<br />Unit 6 Datapoint Business Centre<br /> Administration by:- <br />Netwise Hosting Ltd<br />Netwise House<br />Bermondsey<br />GB<br />https://www.netwise.co.uk/</b><br /> ");
+      //  Facility 9031
+var bounds_9031 = [[51.765198999999996,-0.435502],[51.763199,-0.433502]];
+var rectangle_9031 = L.rectangle(bounds_9031, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_9031.bindPopup("<b>IXP  Facility 9031<br />NTT Hemel Hempstead 1 Data Center (HH1)<br />3 Centro, Boundary Way<br /> Administration by:- <br />NTT Global Data Centers<br />Voltastrasse 15<br />Hattersheim am Main<br />DE<br />https://datacenter.hello.global.ntt</b><br /> ");
+      //  Facility 9032
+var bounds_9032 = [[51.765983,-0.443118],[51.763983,-0.441118]];
+var rectangle_9032 = L.rectangle(bounds_9032, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_9032.bindPopup("<b>IXP  Facility 9032<br />NTT Hemel Hempstead 2 Data Center (HH2)<br />150 Maylands Avenue<br /> Administration by:- <br />NTT Global Data Centers<br />Voltastrasse 15<br />Hattersheim am Main<br />DE<br />https://datacenter.hello.global.ntt</b><br /> ");
+      //  Facility 9033
+var bounds_9033 = [[51.762875,-0.437678],[51.760875000000006,-0.435678]];
+var rectangle_9033 = L.rectangle(bounds_9033, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_9033.bindPopup("<b>IXP  Facility 9033<br />NTT Hemel Hempstead 3 Data Center (HH3)<br />Campus, Spring Way<br /> Administration by:- <br />NTT Global Data Centers<br />Voltastrasse 15<br />Hattersheim am Main<br />DE<br />https://datacenter.hello.global.ntt</b><br /> ");
+      //  Facility 9034
+var bounds_9034 = [[51.517810999999995,-0.616687],[51.515811,-0.614687]];
+var rectangle_9034 = L.rectangle(bounds_9034, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_9034.bindPopup("<b>IXP  Facility 9034<br />NTT Slough 2 Data Center (SL2)<br />670 Ajax Avenue<br /> Administration by:- <br />NTT Global Data Centers<br />Voltastrasse 15<br />Hattersheim am Main<br />DE<br />https://datacenter.hello.global.ntt</b><br /> ");
+      //  Facility 9035
+var bounds_9035 = [[51.518091,-0.617027],[51.516091,-0.615027]];
+var rectangle_9035 = L.rectangle(bounds_9035, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_9035.bindPopup("<b>IXP  Facility 9035<br />NTT Slough 3 Data Center (SL3)<br />665 Ajax Avenue<br /> Administration by:- <br />NTT Global Data Centers<br />Voltastrasse 15<br />Hattersheim am Main<br />DE<br />https://datacenter.hello.global.ntt</b><br /> ");
+      //  Facility 9234
+var bounds_9234 = [[53.796296999999996,-1.7635669999999999],[53.794297,-1.761567]];
+var rectangle_9234 = L.rectangle(bounds_9234, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_9234.bindPopup("<b>IXP  Facility 9234<br />Legend Data Centres<br />The Legend Building<br /> Administration by:- <br />Legend Communications Limited<br />The Legend Building<br />Bradford<br />GB<br />https://www.legend-communications.com/</b><br /> ");
+      //  Facility 9310
+var bounds_9310 = [[55.147681999999996,-6.677148000000001],[55.145682,-6.675148]];
+var rectangle_9310 = L.rectangle(bounds_9310, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_9310.bindPopup("<b>IXP  Facility 9310<br />Prescient Data Centres Northern Ireland<br />Atlantic Link Enterprise Campus<br /> Administration by:- <br />Prescient Data Centres Northern Ireland<br />61 Portstewart Rd<br />Coleraine<br /><br />http://www.prescientdc.com</b><br /> ");
+      //  Facility 9361
+var bounds_9361 = [[52.39882,-1.5803269999999998],[52.396820000000005,-1.578327]];
+var rectangle_9361 = L.rectangle(bounds_9361, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_9361.bindPopup("<b>IXP  Facility 9361<br />UK Servers Coventry<br />Unit 21 West Park<br /> Administration by:- <br />UK Dedicated Servers Limited<br /><br /><br />GB<br />https://www.ukservers.com</b><br /> ");
+      //  Facility 9888
+var bounds_9888 = [[53.694286999999996,-1.8228609999999998],[53.692287,-1.820861]];
+var rectangle_9888 = L.rectangle(bounds_9888, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_9888.bindPopup("<b>IXP  Facility 9888<br />Sungard AS Elland TC4<br />Unit J1, Lowfields Business Park<br /> Administration by:- <br />Sungard Availability Services<br />401 North Broad Street<br />Philadelphia<br />US<br />https://www.sungardas.com/</b><br /> ");
+      //  Facility 10333
+var bounds_10333 = [[51.526984,-0.627992],[51.524984,-0.625992]];
+var rectangle_10333 = L.rectangle(bounds_10333, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_10333.bindPopup("<b>IXP  Facility 10333<br />CyrusOne London III<br />700 Stirling Rd<br /> Administration by:- <br />CyrusOne<br />2850 N Harwood Rd<br />Dallas<br />US<br />http://www.cyrusone.com</b><br /> ");
+      //  Facility 10342
+var bounds_10342 = [[51.520879,-0.629506],[51.518879000000005,-0.627506]];
+var rectangle_10342 = L.rectangle(bounds_10342, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_10342.bindPopup("<b>IXP  Facility 10342<br />China Mobile International - London DC<br />535 Ipswich Rd<br /> Administration by:- <br />China Mobile International Limited<br /><br /><br /><br />https://www.cmi.chinamobile.com</b><br /> ");
+      //  Facility 10409
+var bounds_10409 = [[51.500713,-0.022387],[51.498713,-0.020387]];
+var rectangle_10409 = L.rectangle(bounds_10409, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_10409.bindPopup("<b>IXP  Facility 10409<br />Cogent London CDC<br />20 Mastmaker Road<br /> Administration by:- <br />Cogent Communications, Inc.<br />2450 N Street NW<br />Washington<br />US<br />http://www.cogentco.com</b><br /> ");
+      //  Facility 10831
+var bounds_10831 = [[51.324239,-0.587281],[51.322239,-0.585281]];
+var rectangle_10831 = L.rectangle(bounds_10831, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_10831.bindPopup("<b>IXP  Facility 10831<br />Navisite Woking UK<br />Unit 21, Goldsworth Park Trading Estate, Kestrel Way<br /> Administration by:- <br />NaviSite LLC<br />400 Minuteman Road<br />Andover<br />US<br />https://www.navisite.com</b><br /> ");
+      //  Facility 10832
+var bounds_10832 = [[51.24857,-0.158112],[51.246570000000006,-0.156112]];
+var rectangle_10832 = L.rectangle(bounds_10832, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_10832.bindPopup("<b>IXP  Facility 10832<br />Navisite Redhill UK<br />3 Foxboro Business Park<br /> Administration by:- <br />NaviSite LLC<br />400 Minuteman Road<br />Andover<br />US<br />https://www.navisite.com</b><br /> ");
+      //  Facility 11078
+var bounds_11078 = [[53.334519,-1.3408799999999998],[53.332519000000005,-1.33888]];
+var rectangle_11078 = L.rectangle(bounds_11078, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_11078.bindPopup("<b>IXP  Facility 11078<br />HA Hosting DC2<br />Holbrook Commerce Park<br /> Administration by:- <br />High Availability Hosting Limited<br />Unit 9<br />Sheffield<br />GB<br />https://www.hahosting.com</b><br /> ");
+      //  Facility 11090
+var bounds_11090 = [[52.602610999999996,-2.1113109999999997],[52.600611,-2.109311]];
+var rectangle_11090 = L.rectangle(bounds_11090, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_11090.bindPopup("<b>IXP  Facility 11090<br />HA Hosting DC3<br />Merryhills Enterprise Park<br /> Administration by:- <br />High Availability Hosting Limited<br />Unit 9<br />Sheffield<br />GB<br />https://www.hahosting.com</b><br /> ");
+      //  Facility 11352
+var bounds_11352 = [[52.55525,-0.391896],[52.553250000000006,-0.389896]];
+var rectangle_11352 = L.rectangle(bounds_11352, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_11352.bindPopup("<b>IXP  Facility 11352<br />DSM SIBSON UK<br />DSM Group<br /> Administration by:- <br />DSM (GB) Limited<br /><br /><br /><br /></b><br /> ");
+      //  Facility 8628
+var bounds_8628 = [[50.682852,-2.257535],[50.680852,-2.255535]];
+var rectangle_8628 = L.rectangle(bounds_8628, {color: "black", fillColor: 0, fillOpacity: 0, weight: 4 }).addTo(map);
+rectangle_8628.bindPopup("<b>IXP  Facility 8628<br />Datacenta Hosting<br />Dorset Innovation Park<br /> Administration by:- <br />Datacenta Hosting<br /><br /><br /><br /></b><br /> ");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{"Telehouse North (THN)" : 34},
+{"Telehouse East (THE)" : 39},
+{"Digital Realty Sovereign House (RBS)" : 40},
+{"Digital Realty Cloud House West (TCM)" : 43 },  // pdb says its Interxion London (Cloud House)
+{"Equinix LD8 Harbour Exchange (TCH)" : 45},
+{"Interxion LON2 (IN2)" : 46 },
+{"Equinix LD4 (EQ4)" : 399},
+{"Equinix LD9 Powergate (TCA)" : 534}
+{"Telehouse West (THW)" : 835},
+{"Equinix LD6 (EQ4)" : 2262},
+{"Telehouse North2 (TH2)" : 4360},
+{"Equinix MA1 Williams House (TCW)" : 76},  // linx manchester
+{"Equinix MA3 Joule House (TCJ)" : 1403},  // lINX manchester
+{"TeleData Delta House (TDD)" : 601 }, //linx Manchester
+{"M247 Ball Green (M2I)" : 1054},  //linx manchester
+{"DataVita Glasgow DC1/DC2 (DVG)" : 2992}, // LINX scotland
+{"Pulsant Edinburgh (PUE)" : 271 }, // linx Scotland
+{"Newport(NGD)" : 1548}, //newport linx Wales
+{"BT Stadium House (BTS)" : 1817 }, //cardiff linx wales
+//rest are not in uk
+{"Quality Technology Services(QTS)" : 5150 },
+{"Digital Realty IAD (44521 Hastings) ACC5 (DFT)" : 1380 },
+{"CoreSite Reston (COR)" : 668 },
+{"Iron Mountain VA1 (IMM)" : 5373},
+{"MENA Gateway (MG1).(STJ)" : 7082 }

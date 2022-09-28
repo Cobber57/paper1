@@ -1,0 +1,813 @@
+{
+  "153.92.43.254": {
+    "lat": 52.2815,
+    "lon": -0.8685,
+    "code": 2,
+    "rdns": "153-92-43-254.ip4.cdw.com.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "185.74.25.250": {
+    "lat": 51.24771,
+    "lon": -0.15714,
+    "code": 2,
+    "rdns": "be-1-ibr01-drt-red.uk.cdw.com.",
+    "facility": ["1793"],
+    "port": "",
+    "speed": ""
+  },
+  "153.92.43.246": {
+    "lat": 51.24771,
+    "lon": -0.15714,
+    "code": 2,
+    "rdns": "fo-4-0-5-core01-drt-red.uk.cdw.com.",
+    "facility": ["1793"],
+    "port": "",
+    "speed": ""
+  },
+  "153.92.43.200": {
+    "lat": 51.499819,
+    "lon": -0.010775,
+    "code": 2,
+    "rdns": "te-2-0-1-core01-drt-lon.uk.cdw.com.",
+    "facility": ["40"],
+    "port": "",
+    "speed": ""
+  },
+  "153.92.43.237": {
+    "lat": 51.499819,
+    "lon": -0.010775,
+    "code": 2,
+    "rdns": "fo-0-0-0-20-ibr01-drt-lon.uk.cdw.com.",
+    "facility": ["40"],
+    "port": "",
+    "speed": ""
+  },
+  "195.66.224.253": {
+    "lat": 51.524335,
+    "lon": -0.63804,
+    "code": 2,
+    "rdns": "",
+    "facility": ["2262"],
+    "port": "edge5-eq4 xe-3/0/3",
+    "speed": "10G"
+  },
+  "5.57.16.65": {
+    "lat": 51.5205,
+    "lon": -0.6185,
+    "code": 2,
+    "rdns": "PROBE6087",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "141.170.19.9": {
+    "lat": 53.793329,
+    "lon": -1.54109,
+    "code": 2,
+    "rdns": "unassigned.aql.com.",
+    "facility": ["896"],
+    "port": "",
+    "speed": ""
+  },
+  "141.170.18.196": {
+    "lat": 53.793329,
+    "lon": -1.54109,
+    "code": 2,
+    "rdns": "unassigned.aql.com.",
+    "facility": ["896"],
+    "port": "",
+    "speed": ""
+  },
+  "141.170.30.6": {
+    "lat": 53.793329,
+    "lon": -1.54109,
+    "code": 2,
+    "rdns": "ge-0-0-1.edge1.lds3.aql.com.",
+    "facility": ["896"],
+    "port": "",
+    "speed": ""
+  },
+  "141.170.30.93": {
+    "lat": 53.793329,
+    "lon": -1.54109,
+    "code": 2,
+    "rdns": "xe-2-0-2.edge1.lds2.aql.com.",
+    "facility": ["896"],
+    "port": "",
+    "speed": ""
+  },
+  "141.170.30.95": {
+    "lat": 51.498842,
+    "lon": -0.014327,
+    "code": 2,
+    "rdns": "xe-0-0-4.edge1.lon2.aql.com.",
+    "facility": ["34", "39", "45"],
+    "port": "",
+    "speed": ""
+  },
+  "90.223.193.2": {
+    "lat": 51.5085,
+    "lon": -0.5985,
+    "code": 2,
+    "rdns": "te-0-9-0-30-3.er12.enslo.isp.sky.com.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "195.66.236.253": {
+    "lat": 51.523805,
+    "lon": -0.635545,
+    "code": 2,
+    "rdns": "",
+    "facility": ["399"],
+    "port": "edge1-eq4-lon2 xe23",
+    "speed": "10G"
+  },
+  "37.10.44.9": {
+    "lat": 51.5195,
+    "lon": -0.6325,
+    "code": 2,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "185.40.232.201": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "201.232.40.185.ptr.anycast.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "4.68.72.201": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae-11.edge7.London1.Level3.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "195.50.90.174": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "BOOKING.COM.ear1.London1.Level3.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "107.162.220.1": {
+    "lat": 51.5175,
+    "lon": -0.6405,
+    "code": 2,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "62.115.8.152": {
+    "lat": 51.522463,
+    "lon": -0.62905,
+    "code": 2,
+    "rdns": "slou-b1-link.ip.twelve99.net.",
+    "facility": ["832"],
+    "port": "",
+    "speed": ""
+  },
+  "213.248.71.22": {
+    "lat": 51.522463,
+    "lon": -0.62905,
+    "code": 2,
+    "rdns": "booking-ic307932-slou-b1.ip.twelve99-cust.net.",
+    "facility": ["832"],
+    "port": "",
+    "speed": ""
+  },
+  "52.56.0.231": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ec2-52-56-0-231.eu-west-2.compute.amazonaws.com.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "172.22.10.219": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "217.163.47.173": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "5-1-15-201.ear4.London2.Level3.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "80.82.241.133": {
+    "lat": 51.7785,
+    "lon": -1.2725,
+    "code": 2,
+    "rdns": "133-241-82-80.in-addr.pblin.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "80.82.243.128": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "gi0-0-1.oxf-core-01.ip.pblin.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "80.82.243.135": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "gi0-1-0.oxf-core-02.ip.pblin.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "80.82.243.121": {
+    "lat": 51.51171,
+    "lon": -0.00294,
+    "code": 2,
+    "rdns": "gi2-0-1.lon-core-01.ip.pblin.net.",
+    "facility": ["34", "39", "45", "835"],
+    "port": "",
+    "speed": ""
+  },
+  "80.82.243.6": {
+    "lat": 51.51171,
+    "lon": -0.00294,
+    "code": 2,
+    "rdns": "gi0-0-0.lon-core-02.ip.pblin.net.",
+    "facility": ["34", "39", "45", "835"],
+    "port": "",
+    "speed": ""
+  },
+  "104.238.168.65": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "5.62.127.1": {
+    "lat": 51.4305,
+    "lon": -0.9805,
+    "code": 2,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "46.251.228.201": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "80.255.9.9": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae1-418.nbg30.core-backbone.com.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "194.50.88.44": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "194.81.236.228": {
+    "lat": 51.5195,
+    "lon": -0.6185,
+    "code": 2,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "146.97.129.149": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "146.97.35.121": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae24.londpg-sbr2.ja.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "146.97.33.6": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae30.londtw-sbr2.ja.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "146.97.33.61": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae28.londtt-sbr1.ja.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "146.97.35.170": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae0.londtt-ban3.ja.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "90.223.193.0": {
+    "lat": 51.5115,
+    "lon": 0.0005,
+    "code": 2,
+    "rdns": "te-0-10-0-27-3.er12.thlon.isp.sky.com.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "164.39.242.16": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "195.50.119.97": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae70-1000.edge2.Manchesteruk2.Level3.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "156.154.80.253": {
+    "lat": 51.5195,
+    "lon": -0.6405,
+    "code": 2,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "62.115.55.60": {
+    "lat": 51.522463,
+    "lon": -0.62905,
+    "code": 2,
+    "rdns": "slou-b1-link.ip.twelve99.net.",
+    "facility": ["832"],
+    "port": "",
+    "speed": ""
+  },
+  "193.57.144.254": {
+    "lat": 51.5215,
+    "lon": -0.0705,
+    "code": 2,
+    "rdns": "ebr1.ix1.infernocomms.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "216.66.89.105": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "e0-3.core1.lon6.he.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "184.104.195.109": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ve953.core3.fra2.he.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "138.197.251.132": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "138.197.249.217": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "195.66.224.76": {
+    "lat": 51.51171,
+    "lon": -0.00294,
+    "code": 2,
+    "rdns": "",
+    "facility": ["835"],
+    "port": "core3-thw et-2/2/1",
+    "speed": "100G"
+  },
+  "64.125.28.150": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae3.cs1.lhr15.uk.eth.zayo.com.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "64.125.28.185": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae101.mpr1.ams19.nl.zip.zayo.com.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "94.31.33.62": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "94.31.33.62.T01358-05.above.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "178.237.173.217": {
+    "lat": 51.4995,
+    "lon": -0.0125,
+    "code": 2,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "178.237.173.194": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "178.237.173.28": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "178.237.160.73": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "178.237.160.157": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "194.88.87.201": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "176.74.17.65": {
+    "lat": 53.4685,
+    "lon": -2.2915,
+    "code": 2,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "176.74.23.200": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "0.ge-0-0-23.eqma1-csw1.uk.as41000.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "176.74.23.202": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "gi0-0-0-0.eqma1-rt1.uk.as41000.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "176.74.23.188": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "gi0-0-0-3.thn-rt1.uk.as41000.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "185.97.160.3": {
+    "lat": 51.5215,
+    "lon": -0.6405,
+    "code": 2,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "84.207.255.121": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "84.207.255.121.not-updated.uk.eunx.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "109.232.176.3": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "rtr-ukre-inet02.ax-aee.co.uk.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "194.72.27.150": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "109.159.254.28": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "core2-te0-13-0-2.southbank.ukcore.bt.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "109.159.252.146": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "core6-hu0-4-0-26.faraday.ukcore.bt.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "166.49.209.194": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "166-49-209-194.gia.bt.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "46.227.207.255": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "anycast.gateway.faelix.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "46.227.205.74": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "v1404.xe01.janszoon.d.faelix.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "46.227.205.77": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "v1404.eth7.gunn.x.faelix.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "46.227.205.75": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "v1404.eth6.earhart.n.faelix.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "5.181.12.1": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "ae0.mx204-1.ghm.as201971.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "5.254.1.70": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "185.5.172.109": {
+    "lat": 51.500621,
+    "lon": -0.011758,
+    "code": 2,
+    "rdns": "lon-tel-01c.voxility.net.",
+    "facility": ["34", "79"],
+    "port": "",
+    "speed": ""
+  },
+  "5.254.78.149": {
+    "lat": 51.500621,
+    "lon": -0.011758,
+    "code": 2,
+    "rdns": "lon-tel-01gw.voxility.net.",
+    "facility": ["34", "79"],
+    "port": "",
+    "speed": ""
+  },
+  "185.184.236.26": {
+    "lat": 52.0415,
+    "lon": -0.8225,
+    "code": 2,
+    "rdns": "rdns.host-it.co.uk.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "92.60.104.181": {
+    "lat": 51.522463,
+    "lon": -0.62905,
+    "code": 2,
+    "rdns": "te-4-1.sw1.ld5.slough.as45014.net.",
+    "facility": ["832"],
+    "port": "",
+    "speed": ""
+  },
+  "92.60.104.193": {
+    "lat": 51.51171,
+    "lon": -0.00294,
+    "code": 2,
+    "rdns": "te-4-2.sw1.rtr.thn.lon.as45014.net.",
+    "facility": ["34"],
+    "port": "",
+    "speed": ""
+  },
+  "92.60.104.94": {
+    "lat": 51.51171,
+    "lon": -0.00294,
+    "code": 2,
+    "rdns": "eth-23.gw4.rtr.thn.lon.as45014.net.",
+    "facility": ["34"],
+    "port": "",
+    "speed": ""
+  },
+  "86.188.235.233": {
+    "lat": 51.3885,
+    "lon": -2.3605,
+    "code": 2,
+    "rdns": "gw-alt.netcraft.com.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "194.73.20.130": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "194.72.16.240": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "core3-hu0-6-0-0.faraday.ukcore.bt.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "62.6.201.245": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "core6-hu0-0-0-35.faraday.ukcore.bt.net.",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "185.194.168.2": {
+    "lat": 52.9875,
+    "lon": -1.1715,
+    "code": 2,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "167.98.32.216": {
+    "lat": 0,
+    "lon": 0,
+    "code": 5,
+    "rdns": "",
+    "facility": [],
+    "port": "",
+    "speed": ""
+  },
+  "195.66.224.186": {
+    "lat": 51.51171,
+    "lon": -0.00294,
+    "code": 2,
+    "rdns": "",
+    "facility": ["34"],
+    "port": "edge2-thn xe-5/1/2",
+    "speed": "10G"
+  },
+  "stats": { "2": 109, "3": 0, "4": 0, "5": 80, "total": 195 }
+}

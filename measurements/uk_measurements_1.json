@@ -1,0 +1,172 @@
+{
+  "6087": {
+    "address": "5.57.16.65",
+    "coordinates": [-0.6185, 51.5205],
+    "measurement": 31906476
+  },
+  "6182": {
+    "address": "141.170.19.12",
+    "coordinates": [-1.5485, 53.7985],
+    "measurement": 31906477
+  },
+  "6214": {
+    "address": "178.237.173.220",
+    "coordinates": [-0.0125, 51.4995],
+    "measurement": 31906479
+  },
+  "6382": {
+    "address": "90.223.193.3",
+    "coordinates": [-0.5985, 51.5085],
+    "measurement": 31906480
+  },
+  "6405": {
+    "address": "37.10.44.14",
+    "coordinates": [-0.6325, 51.5195],
+    "measurement": 31906481
+  },
+  "6423": {
+    "address": "176.74.17.75",
+    "coordinates": [-2.2915, 53.4685],
+    "measurement": 31906483
+  },
+  "6446": {
+    "address": "185.40.232.202",
+    "coordinates": [-0.1005, 51.5205],
+    "measurement": 31906484
+  },
+  "6451": {
+    "address": "107.162.220.5",
+    "coordinates": [-0.6405, 51.5175],
+    "measurement": 31906485
+  },
+  "6471": {
+    "address": "52.56.61.239",
+    "coordinates": [-0.1295, 51.5075],
+    "measurement": 31906487
+  },
+  "6499": {
+    "address": "153.92.43.251",
+    "coordinates": [-0.8685, 52.2815],
+    "measurement": 31906488
+  },
+  "6501": {
+    "address": "37.143.141.141",
+    "coordinates": [-1.8925, 50.7175],
+    "measurement": 31906489
+  },
+  "6512": {
+    "address": "80.82.241.134",
+    "coordinates": [-1.2725, 51.7785],
+    "measurement": 31906490
+  },
+  "6515": {
+    "address": "153.92.43.249",
+    "coordinates": [-0.1725, 51.2395],
+    "measurement": 31906491
+  },
+  "6516": {
+    "address": "153.92.43.250",
+    "coordinates": [-0.1725, 51.2405],
+    "measurement": 31906493
+  },
+  "6519": {
+    "address": "46.227.202.97",
+    "coordinates": [-2.2425, 53.4815],
+    "measurement": 31906494
+  },
+  "6532": {
+    "address": "109.232.177.220",
+    "coordinates": [-1.5215, 53.9785],
+    "measurement": 31906495
+  },
+  "6552": {
+    "address": "185.57.191.228",
+    "coordinates": [-0.6405, 52.9085],
+    "measurement": 31906497
+  },
+  "6559": {
+    "address": "185.97.160.7",
+    "coordinates": [-0.6405, 51.5215],
+    "measurement": 31906498
+  },
+  "6562": {
+    "address": "45.77.229.242",
+    "coordinates": [-0.0695, 51.5185],
+    "measurement": 31906500
+  },
+  "6609": {
+    "address": "185.184.236.30",
+    "coordinates": [-0.8225, 52.0415],
+    "measurement": 31906501
+  },
+  "6647": {
+    "address": "5.62.127.14",
+    "coordinates": [-0.9805, 51.4305],
+    "measurement": 31906502
+  },
+  "6670": {
+    "address": "92.223.59.77",
+    "coordinates": [-0.0095, 51.4975],
+    "measurement": 31906504
+  },
+  "6674": {
+    "address": "194.50.88.164",
+    "coordinates": [-0.7895, 53.0495],
+    "measurement": 31906505
+  },
+  "6695": {
+    "address": "194.81.236.229",
+    "coordinates": [-0.6185, 51.5195],
+    "measurement": 31906506
+  },
+  "6699": {
+    "address": "35.234.152.175",
+    "coordinates": [-0.1285, 51.5115],
+    "measurement": 31906508
+  },
+  "6716": {
+    "address": "82.148.224.6",
+    "coordinates": [-2.4425, 53.5805],
+    "measurement": 31906509
+  },
+  "6738": {
+    "address": "185.232.117.201",
+    "coordinates": [-0.1015, 51.5215],
+    "measurement": 31906510
+  },
+  "6843": {
+    "address": "86.188.235.234",
+    "coordinates": [-2.3605, 51.3885],
+    "measurement": 31906511
+  },
+  "6879": {
+    "address": "90.223.193.1",
+    "coordinates": [0.0005, 51.5115],
+    "measurement": 31906512
+  },
+  "6892": {
+    "address": "164.39.242.17",
+    "coordinates": [-2.3085, 53.4685],
+    "measurement": 31906513
+  },
+  "6945": {
+    "address": "156.154.80.254",
+    "coordinates": [-0.6405, 51.5195],
+    "measurement": 31906516
+  },
+  "6948": {
+    "address": "193.57.144.24",
+    "coordinates": [-0.0705, 51.5215],
+    "measurement": 31906517
+  },
+  "6971": {
+    "address": "46.101.90.215",
+    "coordinates": [-0.6295, 51.5175],
+    "measurement": 31906518
+  },
+  "7021": {
+    "address": "185.194.168.88",
+    "coordinates": [-1.1715, 52.9875],
+    "measurement": 31906519
+  }
+}

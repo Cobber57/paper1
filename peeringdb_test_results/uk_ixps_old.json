@@ -1,0 +1,179 @@
+{
+  "18": {
+    "name": ["LINX LON1"],
+    "org_id": [791],
+    "fac_set": [
+      [
+        34, 39, 40, 43, 45, 46, 79, 399, 534, 832, 2262, 835, 4404, 4360, 4089,
+        3152, 6535, 3399
+      ]
+    ],
+    "ixlan_set": [[18]],
+    "ipv4_prefix": "195.66.224.0/22",
+    "ipv6_prefix": "2001:7f8:4::/64"
+  },
+  "53": {
+    "name": ["LONAP"],
+    "org_id": [115],
+    "fac_set": [
+      [34, 39, 40, 45, 46, 835, 2262, 399, 832, 3152, 4360, 43, 79, 6535]
+    ],
+    "ixlan_set": [[53]],
+    "ipv6_prefix": "2001:7f8:17::/64",
+    "ipv4_prefix": "5.57.80.0/22"
+  },
+  "321": {
+    "name": ["LINX LON2"],
+    "org_id": [791],
+    "fac_set": [
+      [
+        34, 39, 40, 43, 45, 46, 79, 399, 534, 832, 835, 2262, 4404, 4360, 4089,
+        3152, 6535, 3399
+      ]
+    ],
+    "ixlan_set": [[321]],
+    "ipv6_prefix": "2001:7f8:4:1::/64",
+    "ipv4_prefix": "195.66.236.0/22"
+  },
+  "435": {
+    "name": ["IXLeeds"],
+    "org_id": [2850],
+    "fac_set": [[896]],
+    "ixlan_set": [[435]],
+    "ipv4_prefix": "91.217.231.0/24",
+    "ipv6_prefix": "2001:7f8:67::/64"
+  },
+  "583": {
+    "name": ["LINX Manchester"],
+    "org_id": [791],
+    "fac_set": [[76, 1054, 1403, 601]],
+    "ixlan_set": [[583]],
+    "ipv4_prefix": "195.66.244.0/24",
+    "ipv6_prefix": "2001:7f8:4:2::/64"
+  },
+  "745": {
+    "name": ["LINX Scotland"],
+    "org_id": [791],
+    "fac_set": [[271, 2992]],
+    "ixlan_set": [[745]],
+    "ipv4_prefix": "195.66.246.0/24",
+    "ipv6_prefix": "2001:7f8:4:3::/64"
+  },
+  "985": {
+    "name": ["BDX BTN1"],
+    "org_id": [10417],
+    "fac_set": [[]],
+    "ixlan_set": [[985]],
+    "ipv4_prefix": "185.1.33.0/24",
+    "ipv6_prefix": "2001:7f8:90::/64"
+  },
+  "1016": {
+    "name": ["LINX Wales"],
+    "org_id": [791],
+    "fac_set": [[1817, 1548]],
+    "ixlan_set": [[1016]],
+    "ipv4_prefix": "195.66.228.0/24",
+    "ipv6_prefix": "2001:7f8:4:4::/64"
+  },
+  "1302": {
+    "name": ["IX Liverpool Titanic"],
+    "org_id": [14113],
+    "fac_set": [[2807, 1206, 4762]],
+    "ixlan_set": [[1302]],
+    "ipv4_prefix": "185.1.71.0/25",
+    "ipv6_prefix": "2001:7f8:a2::/50"
+  },
+  "1927": {
+    "name": ["Equinix Manchester"],
+    "org_id": [2],
+    "fac_set": [[76, 78, 1403, 2907]],
+    "ixlan_set": [[1927]],
+    "ipv4_prefix": "185.1.101.0/24",
+    "ipv6_prefix": "2001:7f8:bc::/64"
+  },
+  "1997": {
+    "name": ["Equinix London"],
+    "org_id": [2],
+    "fac_set": [[399, 832, 2262, 45, 534, 3152, 6535]],
+    "ixlan_set": [[1997]],
+    "ipv4_prefix": "185.1.104.0/24",
+    "ipv6_prefix": "2001:7f8:be::/64"
+  },
+  "2704": {
+    "name": ["IXP UK LON"],
+    "org_id": [19041],
+    "fac_set": [[]],
+    "ixlan_set": [[2704]],
+    "ipv6_prefix": "2001:7f8:d0:4742::/64",
+    "ipv4_prefix": "" 
+  },
+  "2801": {
+    "name": ["LONAP Multicast"],
+    "org_id": [115],
+    "fac_set": [[34, 39, 835, 40, 4974, 3152, 399, 2262, 832, 45, 46]],
+    "ixlan_set": [[2801]],
+    "ipv4_prefix": "195.35.120.0/24"
+  },
+  "2840": {
+    "name": ["LINX LON1 Multicast"],
+    "org_id": [791],
+    "fac_set": [[]],
+    "ixlan_set": [[2840]],
+    "ipv4_prefix": "195.66.230.0/26"
+  },
+  "2955": {
+    "name": ["IX Liverpool Mersey"],
+    "org_id": [14113],
+    "fac_set": [[1206, 2807, 4762]],
+    "ixlan_set": [[2955]],
+    "ipv6_prefix": "2001:7f8:a2:4000::/50",
+    "ipv4_prefix": "185.1.71.192/26"
+  },
+  "2956": {
+    "name": ["IX Liverpool Internet of Things LAN"],
+    "org_id": [14113],
+    "fac_set": [[1206, 2807, 4762]],
+    "ixlan_set": [[2956]],
+    "ipv6_prefix": "2001:7f8:a2:8000::/50",
+    "ipv4_prefix": "" 
+  },
+  "2957": {
+    "name": ["IX Liverpool GRX Peering Exchange (5G)"],
+    "org_id": [14113],
+    "fac_set": [[1206, 2807, 4762]],
+    "ixlan_set": [[2957]],
+    "ipv4_prefix": "185.1.71.128/26"
+  },
+  "3098": {
+    "name": ["BFD-IX"],
+    "org_id": [24546],
+    "fac_set": [[1827, 9234]],
+    "ixlan_set": [[3098]],
+    "ipv4_prefix": "185.1.136.0/24",
+    "ipv6_prefix": "2001:7f8:da::/64"
+  },
+  "3189": {
+    "name": ["BBIX London"],
+    "org_id": [8440],
+    "fac_set": [[4360]],
+    "ixlan_set": [[3189]],
+    "ipv4_prefix": "101.203.76.0/24",
+    "ipv6_prefix": "2403:c780:7200:b076::/64"
+  },
+  "3278": {
+    "name": ["IXBradford"],
+    "org_id": [26198],
+    "fac_set": [[1827]],
+    "ixlan_set": [[3278]],
+    "ipv4_prefix": "185.1.168.0/24",
+    "ipv6_prefix": "2001:7f8:f3::/64"
+  },
+  "3373": {
+    "name": ["NCL-IX"],
+    "org_id": [25688],
+    "fac_set": [[8389, 8390]],
+    "ixlan_set": [[3373]],
+    "ipv6_prefix": "2001:7f8:34::/64",
+    "ipv4_prefix": "185.1.195.0/24"
+  }
+}

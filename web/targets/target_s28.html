@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    
+    
+    
+    <style>
+      html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      #mapid {
+        // configure the size of the map 
+        width: 100%;
+        height: 100%;
+      } 
+
+    </style>
+  </head>
+  <body>
+    <div id="mapid"></div>
+    <script>
+      // initialize Leaflet
+
+      var map = L.map('mapid').setView([51.5205, -0.6185], 12);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1IjoicGF1bG1hYzU3IiwiYSI6ImNrY3AwMXU3azAxb3Yycm1nOWJjMWwxeW8ifQ.CMYqmZyOXntGEoI1X01_vw'
+      }).addTo(map);
+    
+
+      // show the scale bar on the lower left corner
+      L.control.scale().addTo(map);
+
+      // show Target probe on the map
+      // Target 6087
+      var circle6087 = L.circle([51.5205,-0.6185], { color: 'yellow', fillColor: '#8000000', fillOpacity: 0.5, radius: 1000 }).addTo(map);
+      circle6087.bindPopup("<b>Target 6087</b><br />AS 43996<br />5.57.16.65<br /> ");
+
+      var group6087 = L.featureGroup();
+      circle6087.on('click', function(e) {if(map.hasLayer(group6087)){
+        map.removeLayer(group6087);          map.removeLayer(target_6087); }
+      else {
+        map.addLayer(group6087); };} )
+      // Probe 6879
+      var circle6879 = L.circle([51.5115,0.0005], { color: 'red', fillColor: '#8000000', fillOpacity: 0.5, radius: 500 }).addTo(map);
+      circle6879.bindPopup("<b>Probe 6879</b><br />AS 5607<br />90.223.193.1<br /> ");
+
+      var group6879 = L.featureGroup();
+      // greater Circle 6879
+      var gcircle_6879 = L.circle([51.5115,0.0005], { color: 'green', fillColor: '#00', interactive: false, fillOpacity: 0, radius: 131769.0});
+
+      gcircle_6879.addTo(group6879);
+      gcircle_6879.addTo(group6087);
+      // Probe 6879 Hop 1
+      var circle_6879_1 = L.circle([51.5205,-0.6185], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6879_1.bindPopup("<b>Hop 6879_1</b><br />AS [5607]<br />90.223.193.0<br />Address: no address<br />stt : 0.259 ");
+
+
+      circle_6879_1.addTo(group6879);
+      // Probe 6879 Line 1
+      var latlng_6879_1 = [ [51.5115, 0.0005],[51.5205, -0.6185] ] ;
+      var pline_6879_1 = L.polyline(latlng_6879_1, {color: 'green'});
+
+      pline_6879_1.bindPopup("<b>Hop 6879_1</b><br />From: 5.57.16.65 To: 90.223.193.0<br />Distance: 42.84398801921617 Km<br />Stt: 0.259<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.5514026772099894 ");
+
+
+      pline_6879_1.addTo(group6879);
+      // Probe 6879 Hop 2
+      var circle_6879_2 = L.circle([51.522463,-0.62905], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6879_2.bindPopup("<b>Hop 6879_2</b><br />AS [8553]<br />195.66.224.253<br />Address: no address<br />stt : 0.5855 ");
+
+
+      circle_6879_2.addTo(group6879);
+      // Probe 6879 Line 2
+      var latlng_6879_2 = [ [51.5205, -0.6185],[51.5205, -0.6185] ] ;
+      var pline_6879_2 = L.polyline(latlng_6879_2, {color: 'red'});
+
+      pline_6879_2.bindPopup("<b>Hop 6879_2</b><br />From: 5.57.16.65 To: 195.66.224.253<br />Distance: 0.0 Km<br />Stt: 0.5855<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.0 ");
+
+
+      pline_6879_2.addTo(group6879);
+// IXP Featuregroup18
+var group18 = L.featureGroup();
+      // IXP 18 Facility 832
+var bounds_832 = [[51.523463,-0.63005],[51.521463000000004,-0.62805]];
+var rectangle_832 = L.rectangle(bounds_832, {color: "black", fillColor: 0, fillOpacity: 0, weight: 1 });
+rectangle_832.bindPopup("<b>IXP 18<br />LINX LON1<br />195.66.224.0/22<br />2001:7f8:4::/64<br /> Facility 832<br />Equinix LD5 - London, Slough<br />8 Buckingham Avenue<br /> Administration by:- <br />Equinix, Inc.<br />1 Lagoon Dr<br />Redwood City<br />US<br />http://www.equinix.com</b><br /> ");
+rectangle_832.addTo(group18);
+      // Draw Line_832
+var polylinePoints = [[51.522463, -0.62905],[51.522463, -0.62905]];
+var polyline_832 = L.polyline(polylinePoints, {color: "black", weight: 4});
+polyline_832.addTo(group18);
+rectangle_832.addTo(group18);
+polyline_832.addTo(group18);
+      // Probe 6879 Hop 3
+      var circle_6879_3 = L.circle([51.522463,-0.62905], { color: 'blue', fillColor: '#8000000', fillOpacity: 0.5, radius: 300 });
+      circle_6879_3.bindPopup("<b>Hop 6879_3</b><br />AS [43996]<br />5.57.16.65<br />Address: no address<br />stt : 0.6655 ");
+
+
+      circle_6879_3.addTo(group6879);
+      // Probe 6879 Line 3
+      var latlng_6879_3 = [ [51.5205, -0.6185],[51.5205, -0.6185] ] ;
+      var pline_6879_3 = L.polyline(latlng_6879_3, {color: 'red'});
+
+      pline_6879_3.bindPopup("<b>Hop 6879_3</b><br />From: 5.57.16.65 To: 5.57.16.65<br />Distance: 0.0 Km<br />Stt: 0.6655<br />Average Speed of packet in fibre: .66 Speed of light<br />Packet Speed Over This Hop: 0.0 ");
+
+
+      pline_6879_3.addTo(group6879);
+      circle6879.on('click', function(e) {if(map.hasLayer(group6879)){
+        map.removeLayer(group6879);  map.removeLayer(group18); }
+      else {
+        map.addLayer(group6879);  map.addLayer(group18);};} )
+    </script>
+  </body>
+</html>
