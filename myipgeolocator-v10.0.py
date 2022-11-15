@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-# take measurements saved from RIPE ATLAS and discover each hops geographical locations
+# takes measurements saved from RIPE ATLAS and discovers each hops geographical locations
+# Uses the results/targetsfull.json file created by read_measurments4.py, can use the entire file but to limit
+# how much to use whilst testing, copy and paste just the target and source probe_ids into a new file,
+# ie target_6087.json for one target and multiple sources
+# or, target_6087_source_6515.json for just a single source and target.
 
 from dns import resolver,reversename
 import csv
@@ -515,7 +519,7 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
             # But for the time being we will test as if every probe is on a 255.255.255.0 prefix.
             this_subnet = this_hop['ip_from'].split('.')[0]+'.'+this_hop['ip_from'].split('.')[1]+'.'+this_hop['ip_from'].split('.')[2]
             prev_subnet = prev_hop['ip_from'].split('.')[0]+'.'+prev_hop['ip_from'].split('.')[1]+'.'+prev_hop['ip_from'].split('.')[2]
-            
+            print('this_subnet',this_subnet,'prev_subnet',prev_subnet)
             if this_subnet == prev_subnet:
                 this_hop['hop_latitude'] =  prev_hop['hop_latitude']
                 this_hop['hop_longitude'] = prev_hop['hop_longitude']
@@ -528,26 +532,38 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
                 append_vptable_dict(2, this_hop['ip_from'],this_hop['hop_latitude'], this_hop['hop_longitude'],rname,this_hop['facility'],port,speed)
                 stats['2'] += 1
             else:
-                print ('hmm hop is 1 but subnets dont match - see the find location logic rules 1 - may need a new rule')
+                
+
+                print ('hmm hop is 1 but subnets dont match (1)- see the find location logic rules 1 - may need a new rule')
                 print('HOp1s info is',this_hop, ' probe info is ', probe_id, prev_hop)
                 print('SUBNET = ' , this_subnet, prev_subnet)
-                append_vptable_dict(5, this_hop['ip_from'],this_hop['hop_latitude'], this_hop['hop_longitude'],rname,this_hop['facility'],port,speed)
-                stats['5'] += 1
-                input('Wait')
+                this_hop['hop_latitude'] =  prev_hop['hop_latitude']
+                this_hop['hop_longitude'] = prev_hop['hop_longitude']
+                this_hop['asn'] = prev_hop['asn']
+                # this_hop['facility'] = []
+                print('PROBEID is' ,probe_id)
+                this_hop['rdns'] = 'local'
+                append_vptable_dict(2, this_hop['ip_from'],this_hop['hop_latitude'], this_hop['hop_longitude'],rname,this_hop['facility'],port,speed)
+                stats['2'] += 1
+                #input('Wait')
             
             print('RULE1')
            
             print(vptable_dict)
+            
             # input('wait')
         else:
-            
-            this_facility, coords = get_coords(this_hop,rname)
-            
+            #print('RNAME is ', rname)
+            #input('wait')
+            this_facility, coords = get_coords(this_hop,rname,probe_id)
+            #print(this_facility,coords)
+            #input('wait')
             if this_facility:
                 lon = coords[0]
                 lat = coords[1]
                 print(this_hop['facility'],this_facility)
                 this_hop['facility'] = this_facility
+                print('*************************************************************************')
                 print(this_hop['facility'])
                 input('wait')
                 this_hop['hop_longitude'] = lon
@@ -576,16 +592,22 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
                     print('Coords are',  this_hop['ip_from'], this_hop['hop_latitude'], this_hop['hop_longitude'] )
                     append_vptable_dict(2, this_hop['ip_from'],this_hop['hop_latitude'], this_hop['hop_longitude'],rname,this_hop['facility'],port,speed)
                     stats['2'] += 1
+            
                 else:
-                    print ('hmm hop is 1 but subnets dont match - see the find location logic rules 1 - may need a new rule')
+                    # TODO there seems to be 2 probes with the wrong gateway address 6471 and ?, need to look at these.
+                    print ('hmm hop is 1 but subnets dont match (2)- see the find location logic rules 1 - may need a new rule')
                     print('HOp1s info is',this_hop, ' probe info is ', probe_id, prev_hop)
-                    append_vptable_dict(5, this_hop['ip_from'],this_hop['hop_latitude'], this_hop['hop_longitude'],rname,this_hop['facility'],port,speed)
-                    stats['5'] += 1
-                    input('Wait')
+                    this_hop['hop_latitude'] =  prev_hop['hop_latitude']
+                    this_hop['hop_longitude'] = prev_hop['hop_longitude']
+                    this_hop['asn'] = prev_hop['asn']
+                    this_hop['rdns'] = 'local'
+                    append_vptable_dict(2, this_hop['ip_from'],this_hop['hop_latitude'], this_hop['hop_longitude'],rname,this_hop['facility'],port,speed)
+                    stats['2'] += 1
+                    #input('Wait')
                     
                 print('RULE1')
                 
-                #input('wait')
+            # input('wait')
 
 
     # rule2 if using a local subnet and previous wasnt then it is likely that this IP_address is now at the remote site (ie the next hop address) 
@@ -609,6 +631,7 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
             this_hop['hop_longitude'] = 0
             this_hop['rdns'] = 'local'
             this_hop['asn'] = prev_hop['asn']
+            
             
             #input('Wait')
         print('RULE2')
@@ -634,7 +657,7 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
                 print('ASNS are different - RULE3 perhaps maybe use this fact, deferring locating for now')
                 print(results[probe_id])
                 this_hop['use_next_hop_loc'] == True
-                
+                input('wait')
             else:
                 # if the two asns are the same then we are going to have to defer locating this hop and use the next hops location
                 
@@ -644,11 +667,11 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
         # if resolver was able to get a reverse dns name then continue as normal.
         #         
         else:
-            this_facility,coords = get_coords(this_hop,rname)
+            this_facility,coords = get_coords(this_hop,rname,probe_id)
             this_hop['rdns'] = rname
             print('RULE 3 This hops Reversedns name is',rname)
             if this_facility:
-                this_facility, coords = get_coords(this_hop,rname)
+                #this_facility, coords = get_coords(this_hop,rname,probe_id)
                 lon = coords[0]
                 lat = coords[1]
                 this_hop['facility'].append(this_facility)
@@ -665,6 +688,8 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
                         results[probe_id][str(h)]['hop_latitude'] =  lat # fill in longitude of last hop
                         results[probe_id][str(h)]['hop_longitude'] =  lon # fill in longitude of last hop
                         results[probe_id][str(h)]['facility'].append(this_facility)
+                        append_vptable_dict(2, this_hop['ip_from'],this_hop['hop_latitude'], this_hop['hop_longitude'],rname,this_facility,port,speed)
+                        stats['2'] += 1
                         print('hop',h,results[probe_id][str(h)])
                         # if this hop is not a local subnet then add to vptable
                         if not results[probe_id][str(h)]['local_subnet_flag']:
@@ -678,7 +703,7 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
                 print ('RULE 3 got the rname', rname,' but couldnt get the facility',this_hop)
                 append_vptable_dict(5, results[probe_id][str(h)]['ip_from'],this_hop['hop_latitude'], this_hop['hop_longitude'],rname,this_facility,port,speed)
                 stats['5'] += 1
-                input('wait')
+                # input('wait')
             print('RESULTS ARE ',results[probe_id])
         print('RULE3')
         # input('wait')
@@ -1001,7 +1026,7 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
                 results[probe_id]['status_code'].append(7)
                 
             else:
-                this_facility,coords = get_coords(this_hop,rname)
+                this_facility,coords = get_coords(this_hop,rname,probe_id)
 
                 if this_facility:
                     lon = coords[0]
@@ -1061,7 +1086,7 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
             print('RULE 6 didnt find a rname, this_hop',this_hop)
         this_hop['rdns'] = rname
         print('RULE 6 This hops Reversedns name is',rname)
-        this_facility, coords = get_coords(this_hop,rname)
+        this_facility, coords = get_coords(this_hop,rname,probe_id)
 
         if this_facility:
             lon = coords[0]
@@ -1093,7 +1118,7 @@ def get_hop_location(ixp_pre_hops,ixp_in_hops,ixp_post_hops,facilities_used,this
    
     return this_hop, facilities_used, ixp_pre_hops,ixp_in_hops,ixp_post_hops
 
-def get_coords(this_hop,rname):
+def get_coords(this_hop,rname,probe_id):
     
     # coords = []
     ''' 
@@ -1124,6 +1149,10 @@ def get_coords(this_hop,rname):
     f= ''
     possible_facilitys = {}
     last_part = ''
+    prev_last_part = ''
+    skip_town_check = False # if this_part turns out to be only one possible facility then skip town check
+    already_have_possible_facility = False # if we can work out from rdns what the facility is then no need to check towns
+    f=[]
     for this_rdns_partial_name in rdns_parts_list:
         '''
         example:-
@@ -1153,88 +1182,162 @@ def get_coords(this_hop,rname):
                 break
             if this_part == 'unassigned':
                 break
+            if this_part == 'compute':
+                break
+            if this_part == 'amazonaws':
+                break
+            '''
+            if this_part == 'east':
+                break
+            if this_part == 'north':
+                break
+            if this_part == 'south':
+                break
+            '''
+            if this_part == 'twelve':
+                break
+            if this_part == 'cust':
+                break
+            if this_part == 'cdw':
+                print('this was cdw',this_rdns_partial_name)
+                #input('wait')
+                break
             #AQL are only in Leeds so 
             if last_part != 'lon' and this_part == 'aql':
                 this_part = 'leeds'
-            #list of possible facilities
-            possible_facilitys[this_part] = {}
+            
+            # Scripts for Amazon AWS locations
+            if this_part == 'west':
+                print(this_part,this_rdns_partial_name)
+                print(possible_facilitys)
+                input('wait')
+                if this_rdns_partial_name == 'eu-west-2':
+                    input('wait written purely for amazon aws if any other need to rethink')
+                    this_part= 'lon'
+                    fac ='40'
+                    f.append(fac) 
+                    possible_facilitys[this_part] = {}
+                    possible_facilitys[this_part][fac] ={}                                              
+                    possible_facilitys[this_part][fac]['lat'] = facilitys_uk[fac]['latitude']
+                    possible_facilitys[this_part][fac]['lon'] = facilitys_uk[fac]['longitude']
+                    possible_facilitys[this_part][fac]['town'] = 'London'
+                    possible_facilitys[this_part][fac]['org_id'] = facilitys_uk[fac]['org_id']
+                    possible_facilitys[this_part][fac]['networks'] = []
+                    possible_facilitys[this_part][fac]['networks'] = facilitys_uk[fac]['networks']
+                    coords = (possible_facilitys[this_part][fac]['lon'],possible_facilitys[this_part][fac]['lat'])
+                    skip_town_check = True
+                    already_have_possible_facility = True
+                    print(possible_facilitys)
+                    input('wait')
+                    break           
+            if this_part == 'compute':
+                break; 
+            if this_part == 'amazonaws':
+                break;
+            # end scripts for amazonaws
+            # print(possible_facilitys)
+            # input('wait')
+
+                   
+
             # now lets search each town to see if it starts with 'this_part' 
-            for town in townset:
-                print(town,this_part)
-                town_lower = town.casefold()
-                this_part_lower = this_part.casefold()
-                if town_lower.startswith(this_part_lower):
-                    
-                    print(town, this_part,coords)
-                    # if town does start with 'this_part' get a list of facilities in that town
-                    for fac in facilitys_uk:
-                            
+            if skip_town_check == False:
+                #list of possible facilities
+                possible_facilitys[this_part] = {}
+            
+                for town in townset:
+                    print(town,this_part)
+                    town_lower = town.casefold()
+                    this_part_lower = this_part.casefold()
+                    if town_lower.startswith(this_part_lower):
                         
-                        if facilitys_uk[fac]['city'] == town:
+                        print(town, this_part,coords)
+                        # if town does start with 'this_part' get a list of facilities in that town
+                        for fac in facilitys_uk:
+                                
                             
-                            print(fac,town)
-                            print(facilitys_uk[fac]['latitude'])
-                            print(facilitys_uk[fac]['longitude'])
-                            possible_facilitys[this_part][fac] ={}
-                            
-                            
-                            possible_facilitys[this_part][fac]['lat'] = facilitys_uk[fac]['latitude']
-                            possible_facilitys[this_part][fac]['lon'] = facilitys_uk[fac]['longitude']
-                            possible_facilitys[this_part][fac]['town'] = town
-                            possible_facilitys[this_part][fac]['org_id'] = facilitys_uk[fac]['org_id']
-                            possible_facilitys[this_part][fac]['networks'] = []
-                            possible_facilitys[this_part][fac]['networks'] = facilitys_uk[fac]['networks']
-   
-            # this is currently for AQLs benefit, if the interface is in LON then need to stop it being set to leeds
-            # there is probably a better way of doing this but this will suffice for now
-            last_part = this_part
+                            if facilitys_uk[fac]['city'] == town:
+                                
+                                print(fac,town)
+                                print(facilitys_uk[fac]['latitude'])
+                                print(facilitys_uk[fac]['longitude'])
+                                possible_facilitys[this_part][fac] ={}
+                                
+                                
+                                possible_facilitys[this_part][fac]['lat'] = facilitys_uk[fac]['latitude']
+                                possible_facilitys[this_part][fac]['lon'] = facilitys_uk[fac]['longitude']
+                                possible_facilitys[this_part][fac]['town'] = town
+                                possible_facilitys[this_part][fac]['org_id'] = facilitys_uk[fac]['org_id']
+                                possible_facilitys[this_part][fac]['networks'] = []
+                                possible_facilitys[this_part][fac]['networks'] = facilitys_uk[fac]['networks']
+    
+                # this is currently for AQLs benefit, if the interface is in LON then need to stop it being set to leeds
+                # there is probably a better way of doing this but this will suffice for now
+                prev_last_part = last_part
+                last_part = this_part
 
     # now we have to work out which is the correct facility and what the coords of them are
     # we do this by comparing which of the possible facilitys in the relevant town peer with the last ASNs network
-    f=[]
-    for part in possible_facilitys:
-        
-        # if part is not empty
-        if possible_facilitys[part]: 
-            # find the network
-            for facil in possible_facilitys[part]:
-                i = 1
-                for asn in possible_facilitys[part][facil]['networks']:
-                    # facilitys_uk[fac]['networks'] consists of a network,asn tuple, we are only intereted in the asn
-                    i += 1
-                    if i ==2:
-                        i = 0
-                        continue
-                    print('ASN is',asn, this_hop['asn'])
-                    #print(type(asn),type(this_hop['asn']))
-                    if asn == this_hop['asn']:
-                        print('Possible Facility is', possible_facilitys[part])
-                        # input('wait')
-                        coords = (possible_facilitys[part][facil]['lon'],possible_facilitys[part][facil]['lat'])
-                        f.append(facil) 
-                        
-                        # break
-    # POST processing REGEX, 
-    if len(f) > 1:
-        print(' We need to figure out which of these facilities is the correct one', f)
-        # if both are in Leeds then we can select the Salem Church one (896) as they are failrly close together geographically
-        # TODO: this may be a problem later as fac 2384 (aql DC5, Leeds) is mainly used by JISC, perhaps we can check for the JISC ASN
-        # and then select 2384 instead
-        if f[0] == '896' and f[1] == '2384':
-            print('Both in leeds so removing 2384')
-            f.remove('2384')
-            #f= f[0]
-            print('F is',f)
-            coords = (possible_facilitys[part]['896']['lon'],possible_facilitys[part]['896']['lat'])
+    if not already_have_possible_facility:
+        print ('possible facilities are',possible_facilitys)
+        for part in possible_facilitys:
+            
+            # if part is not empty
+            if possible_facilitys[part]: 
+                # find the network
+                for facil in possible_facilitys[part]:
+                    i = 1
+                    for asn in possible_facilitys[part][facil]['networks']:
+                        # facilitys_uk[fac]['networks'] consists of a network,asn tuple, we are only intereted in the asn
+                        i += 1
+                        if i ==2:
+                            i = 0
+                            continue
+                        print('ASN is',asn, this_hop['asn'])
+                        #print(type(asn),type(this_hop['asn']))
+                        if asn == this_hop['asn']:
+                            print('Possible Facility is', possible_facilitys[part])
+                            # input('wait')
+                            coords = (possible_facilitys[part][facil]['lon'],possible_facilitys[part][facil]['lat'])
+                            f.append(facil) 
+                            
+                            # break
+        # POST processing REGEX, 
+        if len(f) > 1:
+            print(' We need to figure out which of these facilities is the correct one', f)
+            # if both are in Leeds then we can select the Salem Church one (896) as they are failrly close together geographically
+            # TODO: this may be a problem later as fac 2384 (aql DC5, Leeds) is mainly used by JISC, perhaps we can check for the JISC ASN
+            # and then select 2384 instead
+            if f[0] == '896' and f[1] == '2384':
+                print('Both in leeds so removing 2384')
+                f.remove('2384')
+                #f= f[0]
+                print('F is',f)
+                coords = (possible_facilitys[part]['896']['lon'],possible_facilitys[part]['896']['lat'])
+            else:
+                print ('Facilities are',f )
+                print(probe_id,this_hop)
+                input('REVERSE Traceroute required here to discover which of the facilities is the correct one')
+                # TODO: reverse_traceroute(target, probe_id) 
+
+        elif len(f) == 0:
+            print(this_hop)
+            if this_hop['id'] == '1':
+                print(' facility not found but this is hop 1 so set to same location as probe')
+                #will be set by the get_location function
+                '''
+                this_hop['hop_latitude']= prev_hop['hop_latitude']
+                this_hop['hop_longitude']= prev_hop['hop_longitude']
+                coords = (this_hop['hop_longitude'],this_hop['hop_latitude'])
+                '''
+            else:
+                print('No possible facilities even after regex need to look at this')
+                print(probe_id,this_hop)
+                input('wait')
         else:
-            print ('Facilities are',f )
-            input('REVERSE Traceroute required here to discover which of the facilities is the correct one')
-            # TODO: reverse_traceroute(target, probe_id) 
-
-
-    print('facilities are ',f,'and coords are',coords)
-    # input('WOOT, wait')
-                    
+            print('facilities are ',f,'and coords are',coords)
+            #input('WOOT, wait')
+                            
     return f,coords  
 
 
@@ -1267,6 +1370,7 @@ def main(argv):
     
     print('Input file is ?', in_file)
     print('Output file is ?', out_file)
+    input('wait')
     # Create the Vantage Point table
     # 
     
@@ -1778,6 +1882,7 @@ def main(argv):
                     #lets clear the vptable each source probe for now, can always remove this when we are happy with results
                     final_vptable_dict.update(vptable_dict)
                     vptable_dict = {}
+                    input('wait')
     final_vptable_filename = 'results/vptables/'+this_target+'.json'
     final_vptable_dict['stats'] = {}
     final_vptable_dict['stats'].update(stats)

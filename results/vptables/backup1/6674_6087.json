@@ -1,0 +1,1 @@
+{"5.57.16.65": {"lat": 51.5205, "lon": -0.6185, "code": 2, "rdns": "PROBE6087", "facility": [], "port": "", "speed": ""}, "194.50.88.44": {"lat": 0, "lon": 0, "code": 5, "rdns": "", "facility": [], "port": "", "speed": ""}, "195.66.224.253": {"lat": 51.524335, "lon": -0.63804, "code": 2, "rdns": "", "facility": [["2262"]], "port": "edge5-eq4 xe-3/0/3", "speed": "10G"}}
