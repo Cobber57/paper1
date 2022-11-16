@@ -1,3 +1,7 @@
+# myipgeolocator-v12.0.py is a standalone module which will read measurments from a file created by the create_measurements4.py
+# it will then attempt to geolocate each of the hops of the traceroutes and create a Vantage Point table which is
+# an ip address to geolocation coordinates.
+
 # create_measurements4.py Creates the initial traceromeasurements between 32 anchors in the UK
 # and adds the measurment info to a file in the measurments folder
 # for use in a application to read that info and make use of it.
