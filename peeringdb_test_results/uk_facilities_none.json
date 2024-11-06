@@ -1,0 +1,178 @@
+{
+  "438": {
+    "org_id": 782,
+    "name": "Synergy House Manchester",
+    "address1": "Pencroft Way",
+    "address2": "1 Synergy House, Manchester Science Park",
+    "city": "Manchester",
+    "country": "GB",
+    "postcode": "M15 6SY",
+    "latitude": 53.462386,
+    "longitude": -2.2369371
+  },
+  "1009": {
+    "org_id": 11051,
+    "name": "Reliance Skewjack",
+    "address1": "B3315, ",
+    "address2": "",
+    "city": "St Levant",
+    "country": "GB",
+    "postcode": "TR 19 6NB",
+    "latitude": 50.0421534,
+    "longitude": -5.660741
+  },
+  "1027": {
+    "org_id": 3844,
+    "name": "VIRTUS LONDON1 (Enfield)",
+    "address1": "Unit 3, Trade City, Crown Road",
+    "address2": "Enfield",
+    "city": "London",
+    "country": "GB",
+    "postcode": "EN1 1TX",
+    "latitude": 51.6516657,
+    "longitude": -0.0535249
+  },
+  "1548": {
+    "org_id": 8100,
+    "name": "NGD Newport",
+    "address1": "Celtic Way",
+    "address2": "Duffryn",
+    "city": "Newport",
+    "country": "GB",
+    "postcode": "NP10 8BE",
+    "latitude": 51.5534127,
+    "longitude": -3.0373415
+  },
+  "1683": {
+    "org_id": 24568,
+    "name": "ANS - MAN5",
+    "address1": "Unit 19 Blackmore Road",
+    "address2": "Cobra Court",
+    "city": "Manchester",
+    "country": "GB",
+    "postcode": "M32 0QY",
+    "latitude": 53.460558,
+    "longitude": -2.3238893
+  },
+  "1684": {
+    "org_id": 24568,
+    "name": "ANS - MAN6",
+    "address1": "Unit 20a & 20b Blackmore Road",
+    "address2": "Cobra Court",
+    "city": "Manchester",
+    "country": "GB",
+    "postcode": "M32 0QY",
+    "latitude": 53.460558,
+    "longitude": -2.3238893
+  },
+  "1793": {
+    "org_id": 73,
+    "name": "Interxion London (Redhill)",
+    "address1": "3 Foxboro Business Park",
+    "address2": "St. Anne\u2019s Boulevard",
+    "city": "Redhill",
+    "country": "GB",
+    "postcode": "RH1 1AX",
+    "latitude": 51.247171071625274, 
+    "longitude": -0.15898130608029076
+  },
+  "1872": {
+    "org_id": 9566,
+    "name": "Colocker",
+    "address1": "Interchange Park",
+    "address2": "",
+    "city": "Milton Keynes",
+    "country": "GB",
+    "postcode": "MK16 9PY",
+    "latitude": 52.0863864,
+    "longitude": -0.7237341
+  },
+  "2384": {
+    "org_id": 1813,
+    "name": "aql DC5",
+    "address1": "Canon House, Apex Way",
+    "address2": "",
+    "city": "Leeds",
+    "country": "GB",
+    "postcode": "",
+    "latitude": 53.79243172343359, 
+    "longitude": -1.5404289947695775
+  },
+  "3213": {
+    "org_id": 4921,
+    "name": "Six Degrees Birmingham Central",
+    "address1": "Garrison Technology Park",
+    "address2": "Westley Street",
+    "city": "Birmingham",
+    "country": "GB",
+    "postcode": "B9 4ER",
+    "latitude": 52.4772548,
+    "longitude": -1.876782
+  },
+  "4798": {
+    "org_id": 73,
+    "name": "Interxion London (Crawley)",
+    "address1": "North Building, Power Avenue",
+    "address2": "Manor Royal, Principal Park Campus",
+    "city": "Crawley",
+    "country": "GB",
+    "postcode": "RH10 9BE",
+    "latitude": 51.1294884,
+    "longitude": -0.1780575
+  },
+  "5441": {
+    "org_id": 16352,
+    "name": "Serverfarm LON1 London",
+    "address1": "Unit 4, Westgate Industrial Estate",
+    "address2": "",
+    "city": "Feltham",
+    "country": "GB",
+    "postcode": "TW14 8RS",
+    "latitude": 51.44666085,
+    "longitude": -0.4541237779476987
+  },
+  "8078": {
+    "org_id": 12974,
+    "name": "Ark Data Centres - Cody Park - A9, A101, A102, A103, A104, A105",
+    "address1": "Old Ively Rd",
+    "address2": "",
+    "city": "Farnborough",
+    "country": "GB",
+    "postcode": "GU14 OLL",
+    "latitude": 51.280921086339156, 
+    "longitude": -0.7918778372948029
+  },
+  "11899": {
+    "org_id": 7431,
+    "name": "Angel House",
+    "address1": "Angel House",
+    "address2": "Chester Le Street",
+    "city": "Durham",
+    "country": "GB",
+    "postcode": "DH2 1AQ",
+    "latitude": 54.873193900000004,
+    "longitude": -1.5862850003348075
+  },
+  "11978": {
+    "org_id": 31498,
+    "name": "EXA Edge DC Wherstead",
+    "address1": "Park Farm",
+    "address2": "",
+    "city": "Wherstead",
+    "country": "GB",
+    "postcode": "IP9 2AF",
+    "latitude": 52.0222998,
+    "longitude": 1.14246
+  },
+  "12221": {
+    "org_id": 32362,
+    "name": "Cloud Innovation Poole Data Center",
+    "address1": "Unit 6, The Concept Center",
+    "address2": "Innovation Close",
+    "city": "Poole",
+    "country": "GB",
+    "postcode": "BH12 4QD",
+    "latitude": 50.7431027,
+    "longitude": -1.9529965
+  }
+}
